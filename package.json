@@ -1,0 +1,21 @@
+{
+  "name": "hello-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "katex": "^0.7.1",
+    "next": "^3.0.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-katex": "^1.2.0"
+  }
+}
