@@ -22,28 +22,23 @@ var linkStyle = {
 };
 
 var Header = function Header() {
-  return _react2.default.createElement("div", {
-    __source: {
+  return _react2.default.createElement("div", { className: "row", __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     }
-  }, _react2.default.createElement(_link2.default, { href: "/", __source: {
+  }, _react2.default.createElement("div", { className: "col-sm-7", __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     }
-  }, _react2.default.createElement("a", { style: linkStyle, __source: {
+  }, _react2.default.createElement(_link2.default, { href: "/", __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     }
-  }, "Home")), _react2.default.createElement(_link2.default, { href: "/about", __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    }
   }, _react2.default.createElement("a", { style: linkStyle, __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     }
-  }, "About")));
+  }, "Home"))));
 };
 
 exports.default = Header;

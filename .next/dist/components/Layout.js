@@ -29,30 +29,43 @@ var layoutStyle = {
 };
 
 var Layout = function Layout(props) {
-  return _react2.default.createElement('div', { style: layoutStyle, __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    }
-  }, _react2.default.createElement(_head2.default, {
+  return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
     }
-  }, _react2.default.createElement('title', {
+  }, _react2.default.createElement(_head2.default, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     }
-  }, 'Quantum mechanics'), _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css', integrity: 'sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0', crossorigin: 'anonymous', __source: {
+  }, _react2.default.createElement('title', {
+    __source: {
       fileName: _jsxFileName,
       lineNumber: 15
+    }
+  }, 'Quantum mechanics'), _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css', integrity: 'sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0', crossorigin: 'anonymous', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    }
+  }), _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', crossorigin: 'anonymous', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
     }
   })), _react2.default.createElement(_Header2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 20
     }
-  }), props.children);
+  }), _react2.default.createElement('div', { style: layoutStyle, className: 'row', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    }
+  }, _react2.default.createElement('div', { className: 'col-sm-7 col-sm-offset-1', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    }
+  }, props.children)));
 };
 
 exports.default = Layout;

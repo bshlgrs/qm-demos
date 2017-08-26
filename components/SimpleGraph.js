@@ -1,8 +1,4 @@
-const Line = (props) => {
-  const { xStart, xEnd, yStart, yEnd, color } = props;
-
-  return <path d={`M${xStart} ${yStart} L${xEnd} ${yEnd}`} stroke={color || 'black'} strokeWidth='1' vectorEffect='non-scaling-stroke'/>
-}
+import Line from "./Line"
 
 function getListOfNumbers(start, n, step) {
   const out = [];
@@ -36,7 +32,9 @@ const GraphFunction = (props) => {
 }
 
 const GraphPath = (props) => {
-  const { color, path } = props.options;
+  const { color, path, tangent } = props.options;
+
+  // TODO: tangent
   return <g>
     {path.map((point, idx) => {
       const nextPoint = path[idx + 1];
@@ -62,10 +60,23 @@ const SimpleGraph = (props) => {
   const yrange = yMax - yMin;
   const { height, width, functions, paths, axes, xaxis, yaxis } = props;
 
+
   const verticalScaling = xrange / yrange;
 
   // todo: get the scaling to work. viewport is very confusing.
   return <div style={graphStyle}>
+    <div style={{position: 'absolute'}}>
+      {(props.texts || []).map((text, idx) => {
+        const [topUnscaled, leftUnscaled] = text.location;
+        const top = (topUnscaled - yMin / yrange) * (height || 300);
+        const left = (leftUnscaled - xMin / xrange) * width;
+
+        return <span style={{position: 'relative', top, left, textAlign: 'center'}}>
+          {text.content}
+        </span>
+      })}
+    </div>
+
     <svg
       height={height || 300}
       width={width || 300}
@@ -76,9 +87,11 @@ const SimpleGraph = (props) => {
         {(axes || xaxis) && <Line xStart={xMin} xEnd={xMax} yStart={0} yEnd={0} />}
         {(axes || yaxis) &&  <Line xStart={0} xEnd={0} yStart={yMin} yEnd={yMax} />}
 
-        {functions && functions.map((options, idx) => <GraphFunction key={idx} options={options} range={[xMin, xMax]}/>)}
+        {functions && functions.map((options, idx) =>
+          <GraphFunction key={idx} options={options} range={[xMin, xMax]}/>)}
         {paths && paths.map((options, idx) => <GraphPath key={idx} options={options} />)}
       </g>
+
     </svg>
   </div>
 }

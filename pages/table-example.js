@@ -3,10 +3,10 @@ import SmartTable from '../components/SmartTable'
 
 
 const exampleData = [
-  {name: "buck", "algorithms-skill": 3, 'lls-skill': 6},
-  {name: "jill", "algorithms-skill": 3, 'lls-skill': 6},
-  {name: "todd", "algorithms-skill": 3, 'lls-skill': 6},
-  {name: "jamie", "algorithms-skill": 3, 'lls-skill': 6}
+  {name: "buck", "algorithms-skill": 3, 'lls-skill': 2.5},
+  {name: "jill", "algorithms-skill": 2, 'lls-skill': 2},
+  {name: "todd", "algorithms-skill": 1, 'lls-skill': 3},
+  {name: "jamie", "algorithms-skill": 4, 'lls-skill': 3}
 ];
 
 const columns = [
@@ -17,7 +17,7 @@ const columns = [
 
 const TableExample = () => <Layout>
   <p>hello</p>
-  <SmartTable data={exampleData} columns={columns}/>
+  <SmartTable data={exampleData} columns={columns} defaultSort={['name', 'asc']}/>
 </Layout>
 
 

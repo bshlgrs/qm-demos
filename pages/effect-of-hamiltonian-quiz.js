@@ -12,8 +12,9 @@ const EffectOfHamiltonianQuiz = () => (
 
     <p>Consider these two wells.</p>
 
-    <div style={{display: 'flex', flexDirection: 'row'}}>
-      <div style={{alignItems: 'center', flexDirection: 'column', display: 'flex'}}>
+
+    <div className="row">
+      <div>
         <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300}
           xaxis={false}
           paths={[
@@ -22,7 +23,7 @@ const EffectOfHamiltonianQuiz = () => (
         />
         <span>Deep Well</span>
       </div>
-      <div style={{alignItems: 'center', flexDirection: 'column', display: 'flex'}}>
+      <div>
         <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300}
           xaxis={false}
           paths={[
@@ -45,8 +46,8 @@ const EffectOfHamiltonianQuiz = () => (
 
     <p>Now, consider these two wells.</p>
 
-    <div style={{display: 'flex', flexDirection: 'row'}}>
-      <div style={{alignItems: 'center', flexDirection: 'column', display: 'flex'}}>
+    <div className='row'>
+      <div>
         <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300}
           xaxis={false}
           paths={[
@@ -55,7 +56,7 @@ const EffectOfHamiltonianQuiz = () => (
         />
         <span>Narrow Well</span>
       </div>
-      <div style={{alignItems: 'center', flexDirection: 'column', display: 'flex'}}>
+      <div>
         <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300}
           xaxis={false}
           paths={[
@@ -65,6 +66,8 @@ const EffectOfHamiltonianQuiz = () => (
         <span>Wide Well</span>
       </div>
     </div>
+
+    <p>Consider the ground state wavefunctions for these two wells.</p>
 
     <ul>
       <li>Which has lower total energy?</li>
@@ -86,13 +89,12 @@ const EffectOfHamiltonianQuiz = () => (
       />
 
 
-
     <h3>Question 4</h3>
 
     <p>Now, consider these two wells.</p>
 
-    <div style={{display: 'flex', flexDirection: 'row'}}>
-      <div style={{alignItems: 'center', flexDirection: 'column', display: 'flex'}}>
+    <div className='row'>
+      <div>
         <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300}
           xaxis={false}
           paths={[
@@ -101,7 +103,7 @@ const EffectOfHamiltonianQuiz = () => (
         />
         <span>Well 1</span>
       </div>
-      <div style={{alignItems: 'center', flexDirection: 'column', display: 'flex'}}>
+      <div>
         <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300}
           xaxis={false}
           paths={[

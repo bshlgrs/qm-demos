@@ -4,12 +4,12 @@ class SmartTable extends React.Component {
     super(props);
 
     this.state = {
-      sort: null
+      sort: this.props.defaultSort
     }
   }
 
   sortBy(colSymbol) {
-    if (this.state.sort === null) {
+    if (this.state.sort == null || colSymbol != this.state.sort[0]) {
       this.setState({ sort: [colSymbol, 'asc']});
     } else {
       const [colSymbol, dir] = this.state.sort;
@@ -17,7 +17,7 @@ class SmartTable extends React.Component {
       if (dir == 'asc') {
         this.setState({ sort: [colSymbol, 'desc']});
       } else {
-        this.setState({ sort: null});
+        this.setState({ sort: this.props.defaultSort});
       }
     }
   }
@@ -25,6 +25,14 @@ class SmartTable extends React.Component {
   render () {
     const { columns, data } = this.props;
     const [sortColSymbol, dir] = this.state.sort || [null, null];
+
+    const sortedData = this.props.data.sort((x, y) => {
+      if (x[sortColSymbol] > y[sortColSymbol]) {
+        return dir == 'desc' ? -1 : 1;
+      } else {
+        return dir == 'desc' ? 1 : -1;;
+      }
+    });
 
     return <table>
       <thead>
@@ -35,13 +43,16 @@ class SmartTable extends React.Component {
               onClick={() => this.sortBy(col.symbol)}
               >
               {col.title}&nbsp;
-              {col.symbol == sortColSymbol && dir == 'asc' ? "^" : "v"}
+              {col.symbol == sortColSymbol &&
+                (dir == 'asc' ?
+                 <i className="fa fa-arrow-down" /> :
+                 <i className="fa fa-arrow-up" />)}
             </th>
           )}
         </tr>
       </thead>
       <tbody>
-        {data.map((row, idx) => <tr key={idx}>
+        {sortedData.map((row, idx) => <tr key={idx}>
           {columns.map((col, idx) => <td key={idx}>{row[col.symbol]}</td>)}
         </tr>)}
       </tbody>
