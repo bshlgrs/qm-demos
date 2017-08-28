@@ -6,13 +6,29 @@ import MultipleChoiceQuestion from '../components/MultipleChoiceQuestion'
 
 const Index = () => (
   <Layout>
-    <p>Hello Next.js</p>
-    <MultipleChoiceQuestion
-      question="What is 2 + 2?"
-      answers={['3', '4', '5']}
-      correctAnswer='4'
-      explanation='2 = 1+1, so try counting 1, 2, 3, 4'
-    />
+    <h2>Buck's intro to QM</h2>
+    <p>Pages:</p>
+    <p><Link href="/00-intro">
+      <a>Intro</a>
+    </Link></p>
+    <p><Link href="/01-wavefunctions">
+      <a>Wavefunctions</a>
+    </Link></p>
+    <p><Link href="/02-energy">
+      <a>Calculating the energy of wavefunctions</a>
+    </Link></p>
+    <p><Link href="/03-ground-states">
+      <a>Ground states</a>
+    </Link></p>
+    <p><Link href="/04-stationary-states">
+      <a>Stationary states</a>
+    </Link></p>
+    <p><Link href="/05-hydrogen">
+      <a>Hydrogen</a>
+    </Link></p>
+    <p><Link href="/06-identical-particles">
+      <a>Identical particles</a>
+    </Link></p>
   </Layout>
 )
 

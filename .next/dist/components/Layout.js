@@ -21,51 +21,52 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _jsxFileName = '/Users/buck/repos/qm-next/components/Layout.js';
 
 
-var layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD',
-  backgroundColor: "#eee"
-};
-
 var Layout = function Layout(props) {
   return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 6
     }
   }, _react2.default.createElement(_head2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 7
     }
   }, _react2.default.createElement('title', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 8
     }
   }, 'Quantum mechanics'), _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css', integrity: 'sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0', crossorigin: 'anonymous', __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 9
     }
   }), _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', crossorigin: 'anonymous', __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 10
     }
-  })), _react2.default.createElement(_Header2.default, {
-    __source: {
+  }), _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://bootswatch.com/flatly/bootstrap.css', crossorigin: 'anonymous', __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 11
     }
-  }), _react2.default.createElement('div', { style: layoutStyle, className: 'row', __source: {
+  })), _react2.default.createElement('div', { className: 'container', __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 15
+    }
+  }, _react2.default.createElement('div', { className: 'row', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
     }
   }, _react2.default.createElement('div', { className: 'col-sm-7 col-sm-offset-1', __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 17
     }
-  }, props.children)));
+  }, _react2.default.createElement(_Header2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    }
+  }), props.children))));
 };
 
 exports.default = Layout;

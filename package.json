@@ -21,7 +21,8 @@
     "numericjs": "^1.2.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-katex": "^1.2.0"
+    "react-katex": "^1.2.0",
+    "showdown": "^1.7.3"
   },
   "devDependencies": {
     "font-awesome": "^4.7.0"

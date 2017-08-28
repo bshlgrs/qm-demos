@@ -53,47 +53,50 @@ const GraphPath = (props) => {
   </g>;
 }
 
-const SimpleGraph = (props) => {
-  const [xMin, xMax] = props.xrange;
-  const xrange = xMax - xMin;
-  const [yMin, yMax] = props.yrange;
-  const yrange = yMax - yMin;
-  const { height, width, functions, paths, axes, xaxis, yaxis } = props;
+class SimpleGraph extends React.PureComponent {
+  render () {
+    const props = this.props;
+    const [xMin, xMax] = props.xrange;
+    const xrange = xMax - xMin;
+    const [yMin, yMax] = props.yrange;
+    const yrange = yMax - yMin;
+    const { height, width, functions, paths, axes, xaxis, yaxis } = props;
 
 
-  const verticalScaling = xrange / yrange;
+    const verticalScaling = xrange / yrange;
 
-  // todo: get the scaling to work. viewport is very confusing.
-  return <div style={graphStyle}>
-    <div style={{position: 'absolute'}}>
-      {(props.texts || []).map((text, idx) => {
-        const [topUnscaled, leftUnscaled] = text.location;
-        const top = (topUnscaled - yMin / yrange) * (height || 300);
-        const left = (leftUnscaled - xMin / xrange) * width;
+    // todo: get the scaling to work. viewport is very confusing.
+    return <div style={graphStyle}>
+      <div style={{position: 'absolute'}}>
+        {(props.texts || []).map((text, idx) => {
+          const [topUnscaled, leftUnscaled] = text.location;
+          const top = (topUnscaled - yMin / yrange) * (height || 300);
+          const left = (leftUnscaled - xMin / xrange) * width;
 
-        return <span style={{position: 'relative', top, left, textAlign: 'center'}}>
-          {text.content}
-        </span>
-      })}
+          return <span key={idx} style={{position: 'relative', top, left, textAlign: 'center'}}>
+            {text.content}
+          </span>
+        })}
+      </div>
+
+      <svg
+        height={height || 300}
+        width={width || 300}
+        viewBox={`${xMin} ${yMin} ${xrange} ${yrange}`}
+        // preserveAspectRatio="xMaxYMax none"
+        style={{backgroundColor: 'white'}}>
+        <g transform={`scale(1,${-verticalScaling})`}>
+          {(axes || xaxis) && <Line xStart={xMin} xEnd={xMax} yStart={0} yEnd={0} />}
+          {(axes || yaxis) &&  <Line xStart={0} xEnd={0} yStart={yMin} yEnd={yMax} />}
+
+          {functions && functions.map((options, idx) =>
+            <GraphFunction key={idx} options={options} range={[xMin, xMax]}/>)}
+          {paths && paths.map((options, idx) => <GraphPath key={idx} options={options} />)}
+        </g>
+
+      </svg>
     </div>
-
-    <svg
-      height={height || 300}
-      width={width || 300}
-      viewBox={`${xMin} ${yMin} ${xrange} ${yrange}`}
-      preserveAspectRatio="xMaxYMax none"
-      style={{backgroundColor: 'white'}}>
-      <g transform={`scale(1,${-verticalScaling})`}>
-        {(axes || xaxis) && <Line xStart={xMin} xEnd={xMax} yStart={0} yEnd={0} />}
-        {(axes || yaxis) &&  <Line xStart={0} xEnd={0} yStart={yMin} yEnd={yMax} />}
-
-        {functions && functions.map((options, idx) =>
-          <GraphFunction key={idx} options={options} range={[xMin, xMax]}/>)}
-        {paths && paths.map((options, idx) => <GraphPath key={idx} options={options} />)}
-      </g>
-
-    </svg>
-  </div>
+  }
 }
 
 const graphStyle = {
