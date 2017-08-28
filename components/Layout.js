@@ -14,7 +14,7 @@ const Layout = (props) => (
 
     <div className="container">
       <div className="row">
-        <div className='col-sm-7 col-sm-offset-1'>
+        <div className='col-sm-8 col-sm-offset-1'>
           <Header />
           {props.children}
         </div>

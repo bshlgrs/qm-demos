@@ -57,7 +57,7 @@ var Layout = function Layout(props) {
       fileName: _jsxFileName,
       lineNumber: 16
     }
-  }, _react2.default.createElement('div', { className: 'col-sm-7 col-sm-offset-1', __source: {
+  }, _react2.default.createElement('div', { className: 'col-sm-8 col-sm-offset-1', __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     }

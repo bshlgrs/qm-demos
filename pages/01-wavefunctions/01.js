@@ -5,7 +5,7 @@ import CarouselMultipleChoiceQuestion from '../../components/CarouselMultipleCho
 import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 
 
-const Index1 = () => {
+const Thing01 = () => {
   function graph(fn) {
     return <SimpleGraph
       xrange={[-3, 3]}
@@ -41,4 +41,4 @@ const Index1 = () => {
   </Layout>
 }
 
-export default Index1;
+export default Thing01;
