@@ -30,7 +30,7 @@ class MultipleChoiceQuestion extends React.Component {
         )}
 
         <button
-          disabled={!this.state.answerIdx == null || this.state.submitted}
+          disabled={this.state.answerIdx === null || this.state.submitted}
           onClick={() => this.state.answerIdx !== null && this.setState({submitted: true})}
           className="btn btn-primary">
           Submit
@@ -38,14 +38,14 @@ class MultipleChoiceQuestion extends React.Component {
 
         <div className={`panel ${panelAnswerClass}`}>
           <div className='panel-heading' style={{opacity: this.state.submitted ? 1 : 0}}>
-            <h3 className='panel-title'>{(correct ? "Correct!" : "Wrong!")}
-            </h3>
+            <span className='panel-title'>{(correct ? "Correct!" : "Wrong!")}
+            </span>
           </div>
           {this.state.submitted && <div className="panel-body">
             {this.props.explanation}
-            {correct ? this.props.correctText : this.props.incorrectText}
+            <div>{correct ? this.props.correctText : this.props.incorrectText}</div>
             {!correct && <button
-              onClick={() => this.setState({submitted: false})}
+              onClick={() => this.setState({submitted: false, answerIdx: null})}
               className="btn btn-primary">
               Try again
             </button>}

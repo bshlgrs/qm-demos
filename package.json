@@ -22,7 +22,8 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-katex": "^1.2.0",
-    "showdown": "^1.7.3"
+    "showdown": "^1.7.3",
+    "victory": "^0.21.5"
   },
   "devDependencies": {
     "font-awesome": "^4.7.0"
