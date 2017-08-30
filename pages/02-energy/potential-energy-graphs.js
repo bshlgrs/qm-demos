@@ -35,7 +35,14 @@ const PotentialEnergyGraphsPage = () => {
     </Row>
 
     <MarkdownWithLatex text={`
-At the scales where humans experience it, gravity is basically a constant force. (It's a little bit stronger closer to the ground, but only a tiny bit.) So the potential energy from gravity is basically a linear function of height.
+The first graph, the linear one, is closest to correct.
+
+
+
+
+At the scales where humans experience it, gravity is basically a constant force. (It's a little bit stronger closer to the ground, but only a tiny bit.)
+
+
 
 Exercise: multiple choice for gravitational potential energy function as a function of how many stories up a building you are.
 `}/>
@@ -44,19 +51,28 @@ Exercise: multiple choice for gravitational potential energy function as a funct
     <h4>Springs</h4>
 
     <MarkdownWithLatex text={`
-Springs are a different story. Springs work according to Hooke's law, which says that they pull twice as hard if you pull them twice as far. Or, in math, F = -kx. What does this look like in terms of a graph?
+Springs are a different story. Springs work according to Hooke's law, which says that they pull twice as hard if you pull them twice as far. Or, in math, F = -kx.
+MORE HERE`} />
 
-Exercise: multiple choice, where the options are: x, abs(x), $$x^2$$, $$-x^2$$
+    <p>Step one: what are the energies like at equilibrium, when stretched, and when pushed</p>
 
-IDEA: give them a button which lets them flip the curve.
-IDEA: button which says "hint" which just tells you a thing that is implied by your choice.
+    <CarouselMultipleChoiceQuestion
+      question="What does this look like in terms of a graph?"
+      answers={[
+        graph({color: 'black', fn: (x) => (x**2)}),
+        graph({color: 'black', fn: (x) => (x)}),
+        graph({color: 'black', fn: (x) => Math.abs(x)}),
+        graph({color: 'black', fn: (x) => -(x**2)}),
+      ]}
+      correctAnswerIdx={1}
+      correctText={<Link href='./02'>
+          <button className='btn btn-primary'>Next</button>
+        </Link>}
+      />
+    <p>This is the simplest example of a system which oscillates. ADD MORE HERE?</p>
 
-Answer: x**2.
+    <p>OPTIONAL ADDITION: When you have a system in a stable state, the potential is locally well approximated by a spring.</p>
 
-This is the simplest example of a system which oscillates. ADD MORE HERE?
-
-OPTIONAL ADDITION: When you have a system in a stable state, the potential is locally well approximated by a spring.
-`} />
   </Layout>
 }
 
