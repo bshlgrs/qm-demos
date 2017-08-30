@@ -36,14 +36,6 @@ Inaccuracies:
 
 - A variety of places throughout, I've ignored details of complex numbers, eg complex conjugation.
     `}/>
-    <MultipleChoiceQuestion
-      question="What is 2 + 2?"
-      answers={['3', '4', '5']}
-      correctAnswer='4'
-      explanation='2 = 1+1, so try counting 1, 2, 3, 4'
-    />
-
-    <p>thisdgfds</p>
 
   </Layout>
 )

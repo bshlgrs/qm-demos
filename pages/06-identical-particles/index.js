@@ -5,15 +5,32 @@ import MultipleChoiceQuestion from '../../components/MultipleChoiceQuestion'
 import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 
 
-const Index3 = () => (
+const IdenticalParticlesPage = () => (
   <Layout>
     <h2>Identical particles</h2>
     <MarkdownWithLatex text={`
-???
+Multiple particles just mean your wavefunction is over more variables
+
+Interestingly, electrons are indistinguishable.
+
+WHERE DO I EXPLAIN SPIN?
+
+### Visualizing wavefunction anti-symmetry
+
+The wavefunction has to be anti-symmetric
+
+- Question: does that mean it can't have the same value at two places?
+
+- picture of anti-symmetric heatmap
+- "conditional wavefunction" graph
+- this means that you need high kinetic energy to have things be close to each other
+- Eg calculate the kinetic energy of two electrons with gaussian distributions and varied means and variances
+
+Do the same exercise with bosons
     `}/>
 
 
   </Layout>
 )
 
-export default Index3
+export default IdenticalParticlesPage
