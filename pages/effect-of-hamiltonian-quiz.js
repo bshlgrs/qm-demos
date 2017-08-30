@@ -15,7 +15,7 @@ const EffectOfHamiltonianQuiz = () => (
 
     <div className="row">
       <div>
-        <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300}
+        <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300} height={200}
           xaxis={false}
           paths={[
             {color: 'brown', path: [[-3, 0], [-1, 0], [-1, -1], [1, -1], [1, 0], [3, 0]]}
@@ -24,7 +24,7 @@ const EffectOfHamiltonianQuiz = () => (
         <span>Deep Well</span>
       </div>
       <div>
-        <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300}
+        <SimpleGraph xrange={[-3, 3]} yrange={[-1.5, 1.5]} width={300} height={200}
           xaxis={false}
           paths={[
             {color: 'brown', path: [[-3, 0], [-1, 0], [-1, -0.5], [1, -0.5], [1, 0], [3, 0]]}

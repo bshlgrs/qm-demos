@@ -27,6 +27,12 @@ Takeaway: higher energy wavefunctions oscillate faster.
 
 Exercise: Wavefunction with energy -1.
 
+
+------
+
+Emission spectra
+
+Colors
     `}/>
 
 

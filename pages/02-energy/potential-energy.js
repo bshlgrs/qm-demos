@@ -14,7 +14,7 @@ const PotentialEnergyPage = () => (
 
 In this section, we'll talk about potential energy. We'll revisit what it means in classical mechanics. We'll look at the potential energy that comes from gravity, springs, and electric forces. Finally, we'll learn how to calculate the potential energy of the wavefunction.
 
-TODO: tell people who know classical mechanics to feel free to skip ahead.
+TODO: tell people who know classical mechanics to feel free to skip ahead. In particular, ask them to look at a graph and identify whether it's the potential energy associated with two repelling charges, two attractive charges, gravity, or a spring.
 
 Potential energy is the capacity to do work that comes from the position of a system. Let's talk about gravitational potential energy. If you have a heavy thing elevated, then you can lower it and extract energy. So things have more potential energy when they're high up.
 

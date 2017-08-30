@@ -9,24 +9,24 @@ const Index3 = () => (
   <Layout>
     <h2>Hydrogen</h2>
     <MarkdownWithLatex text={`
-Here's an important concept: wavefunctions which have the same energy everywhere. These have the property that as time goes on, their probability distribution stays the same. Let's call those "stationary solutions".
+Let's talk about hydrogen
 
-Ground states are always this. WHY
+First we need to talk about how to generalize to 3D:
 
-But there are other solutions.
+- the second derivative becomes the del operator
+- some integrals are over more space
 
-One case we'll talk about is the case of wavefunctions in constant potential.
+But the fundamental ideas are the same.
 
-Exercise: draw a wavefunction with energy 1. You have to draw the curve, and we show you its energy everywhere. If the energy goes too far away from 1, you haven't passed the exercise.
+CRAZY IDEA: let people guess radial functions, tell them the energy.
 
-Takeaway: wavefunctions with positive KE oscillate on areas of positive kinetic energy. This is like a standing wave.
 
-Exercise: Same thing, for energy 2.
 
-Takeaway: higher energy wavefunctions oscillate faster.
 
-Exercise: Wavefunction with energy -1.
+One difference between 1D and 3D is that you can have finite energy in the proton potential.
 
+
+walk through the other stationary states.
     `}/>
 
 

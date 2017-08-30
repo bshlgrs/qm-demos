@@ -40,7 +40,3 @@ Before quantum mechanics, humans didn’t have any idea how this complexity coul
 
 Another beautiful thing about all this is that the solution ended up being in a really different direction than I would have expected.
 
-
-
-
-

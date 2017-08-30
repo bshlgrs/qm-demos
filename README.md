@@ -52,3 +52,10 @@ Other points I haven't made:
 - The different worlds of protons and electrons. The protons in the upper world are moving according to a conservative force. The electrons are just doing their thing
   - How does this actually play out? what's the breakdown between proton KE, electron wavefunction KE and PE?
 - QM is first order.
+
+
+
+## Shorter version
+
+- QM has wavefunctions.
+- Their energies are a function of their potential energy and their kinetic energy.

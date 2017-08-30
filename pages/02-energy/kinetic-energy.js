@@ -75,7 +75,11 @@ Okay, so now we know how to calculate the energy of a wavefunction. Some notes:
 - Kinetic energy can be calculated totally ignoring the potential.
 - Potential energy can be calculated totally ignoring the complex phase of the wavefunction.
 
+So the goal was to figure out the ground state energy of a particular potential. Now we know how to calculate the energy of a wavefunction in a potential, but we don't know how to go from that to reasoning about the properties of the ground states of a potential. We're going to get to that next.
+
  `}/>
+
+     <Link href="/03-ground-states/"><a>Continue</a></Link>
 
 
   </Layout>
