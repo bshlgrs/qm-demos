@@ -8,7 +8,5 @@ exports.exportPathMap = () => {
     pathMap[path] = { page: path }
   })
 
-  delete pathMap['victory-test'];
-  console.log("making exportPathMap. Pathmap is ", pathMap)
   return pathMap;
 }
