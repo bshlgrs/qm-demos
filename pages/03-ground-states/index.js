@@ -88,6 +88,18 @@ BTW, we can neglect the complex state of wavefunctions here. This is because the
       <li>Which has lower potential energy?</li>
     </ul>
 
+    <MarkdownWithLatex text={`
+## The variational method
+
+I want to explicitly explain something that we've been doing implicitly.
+
+Things have strictly higher energy than the ground state.
+
+## The fake hydrogen atom
+
+## The H2 molecule
+
+    `}/>
 
   </Layout>
 )

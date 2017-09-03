@@ -9,47 +9,37 @@ const Index1 = () => (
   <Layout>
     <h2>Wavefunctions</h2>
     <MarkdownWithLatex text={`
-In classical mechanics, we have configurations. Great explanation [here](http://lesswrong.com/lw/pi/classical_configuration_spaces/).
+In classical mechanics, we describe a system by giving values for all its position variables.
 
-We could have a probability distribution over these configurations. But the probability distribution itself isn't real. (Physics is linear in the probability distribution.)
+We describe a ball in one dimension with one number. We describe two balls in one dimension with two numbers. So type is (R, R).
 
-QM is not like this. In QM, the probability distribution has a real effect. It's more like water waves. In water waves, the amount of water is conserved, and you can kind of imagine it as a probability distribution over where you'll find a randomly chosen particle. But if you try to think of it too literally that way, you'll get really confused.
+In quantum mechanics, we need to describe things not just in terms of a configuration, but in terms of weights for every possible configuration. It's a lot like as if we had a probability distribution over configurations.
 
-Water waves by water flowing downhill. explain how that works
+Quiz: what's the type of a probability distribution over single variable? Answer: Real to Real.
 
-Quantum mechanics, similarly, is a law of physics which involves interactions between nearby parts of the probability distribution.
+What about a probability distribution over two variables? (Real, Real) -> Real.
 
-In QM, the wavefunction is complex and uses L2 norm.
+Our physics is in terms of probabilities: the probability that an observer will observe a particle to be in a particular place. This isn't a subjective thing, it's an objective fact about the universe.
 
-HERE's a picture of a wavefunction. At every point, it tells you the amplitude of the particle being at that particular position.
+(What does it mean for physics to be in terms of probabilities? Couldn't I describe all of classical mechanics in this way, too? The difference is that in classical mechanics, the different configurations don't affect each other. In quantum mechanics, the physics involves other configurations. Put another way, QM is not linear.)
 
-Exercise: match wavefunction to probability distribution
+It turns out that QM has wavefunctions actually in terms of complex numbers, not real numbers. So it's Real to Complex. What about if it's two things? Then it's (Real, Real) -> Complex. MORE HERE
 
-We can also talk about the expectation values of things. Exercise: which wavefunction has the higher expectation value of left-ness?
+[Go understand complex numbers here maybe](https://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/)
 
---
+We turn it into a probability distribution by taking the squared modulus. Why? Well we have to use *something*, and the squared modulus makes the phase non physically real.
 
-We can have more dimensions as well. For example, we could have an x, y, and z component, so our wavefunction is a function from (x, y, z) to a complex number. The rule is the same: the probability adds up to one.
+-----
 
+One really neat thing about quantum mechanics is that it's first-order. We use the coileyness to describe the directions things go in. This is really neat--it means that we can describe both the approximate position and approximate momentum of a particle with just one function from its position to C.
 
-If we have multiple particles, we generalize the above in the same way that we'd generalize probability distributions in the classical configuration probability distribution case.
+-----
 
+Where do we go from here?
 
-
-What do we do with this distribution? The most obvious thing is to ask how it changes over time. In classical mechanics, we mostly just want to know how things change over time. We express everything in terms of how it changes over time. For example, when you build a bridge, ideally you want all of the bricks to not be moving. You do this by effectively using the laws of how things move to figure out if the bridge bricks are going to start moving, and if they are moving, you should probably try a different way of building your bridge.
-
-The equation that describes how this works is the Schroedinger equation. I'll explain it eventually in this series. But for most of the rest of this blog series, we're not actually going to be talking about how things move. We're almost entirely interested in the energy of electrons. TODO: MORE HERE.
-
-
-ALSO ADD: QM is first order
-
-NOTES
-
-- link to Scott Aaronson on [why it's L2](https://www.scottaaronson.com/democritus/lec9.html)
-- An interesting feature of this physics is that it's first-order.
-  - TODO: find other explanations of this
-- The [LessWrong QM sequence](http://lesswrong.com/lw/r6/an_intuitive_explanation_of_quantum_mechanics/)
-- Another explanation of why wavefunctions are the way that they are is that they let us have a first-order system of physics.
+- Learn how to calculate the energy of a wavefunction, because we're interested in statics a lot of the time
+- See how time evolution works
+- Learn about the restrictions on wavefunctions that come from identical particles, and see how those cause our universe to have the neat structure it has.
 
     `}/>
 
@@ -58,3 +48,4 @@ NOTES
 )
 
 export default Index1;
+

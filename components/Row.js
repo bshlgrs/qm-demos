@@ -13,6 +13,7 @@ const Row = (props) => {
           align-items: center;
           flex-direction: column;
           display: flex;
+          flex: 1;
         }
       `}</style>
     <div className="row-component">

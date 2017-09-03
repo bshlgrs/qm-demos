@@ -28,12 +28,12 @@ const PotentialEnergyGraphsSection = () => {
 
     <p>Obviously, the energy is higher when the car is on the right than when the car is on the left. But what's the shape of the graph? All of the following graphs are taller on the right than the left; we need to know which is correct.</p>
 
-    <Row>
-      {graph({color: 'black', fn: (x) => (x)})}
-      {graph({color: 'black', fn: (x) => ((x + 1)**2 * 0.5 - 0.9)})}
-      {graph({color: 'black', fn: (x) => ((x + 1.05)**0.5 * 1.4 - 1.1)})}
-      {graph({color: 'black', fn: (x) => (0.95 * Math.sin(x * 1.5))})}
-    </Row>
+    <div className="row">
+      <div className='col-xs-6 col-sm-3'>{graph({color: 'black', fn: (x) => (x)})}</div>
+      <div className='col-xs-6 col-sm-3'>{graph({color: 'black', fn: (x) => ((x + 1)**2 * 0.5 - 0.9)})}</div>
+      <div className='col-xs-6 col-sm-3'>{graph({color: 'black', fn: (x) => ((x + 1.05)**0.5 * 1.4 - 1.1)})}</div>
+      <div className='col-xs-6 col-sm-3'>{graph({color: 'black', fn: (x) => (0.95 * Math.sin(x * 1.5))})}</div>
+    </div>
 
     <MarkdownWithLatex text={`
 

@@ -9,9 +9,16 @@ const IdenticalParticlesPage = () => (
   <Layout>
     <h2>Identical particles</h2>
     <MarkdownWithLatex text={`
-Multiple particles just mean your wavefunction is over more variables
+Your wavefunction is like a probability distribution, right. LINK TO LESSON 1
+
+If it's a joint distribution, it's from multiple positions to a complex number.
 
 Interestingly, electrons are indistinguishable.
+
+
+
+
+
 
 WHERE DO I EXPLAIN SPIN?
 
@@ -27,6 +34,7 @@ The wavefunction has to be anti-symmetric
 - Eg calculate the kinetic energy of two electrons with gaussian distributions and varied means and variances
 
 Do the same exercise with bosons
+
     `}/>
 
 

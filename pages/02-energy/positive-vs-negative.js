@@ -10,8 +10,7 @@ import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 import MultipleChoiceQuestion from '../../components/MultipleChoiceQuestion'
 
 
-const PositiveVsNegativePotentialEnergy = () => {
-  <div>
+const PositiveVsNegativePotentialEnergy = () =>  (<div>
     <MarkdownWithLatex text={`
 
 In this section, we'll talk about potential energy. We'll revisit what it means in classical mechanics. We'll look at the potential energy that comes from gravity, springs, and electric forces. Finally, we'll learn how to calculate the potential energy of the wavefunction.

@@ -10,3 +10,5 @@ exports.exportPathMap = () => {
 
   return pathMap;
 }
+
+exports.appPrefix = '/next'
