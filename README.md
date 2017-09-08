@@ -1,6 +1,6 @@
-# qm demos
+# qm notes
 
-demos
+This is a work in progress. It's currently deployed [here](http://next.shlegeris.com).
 
 ## Contents
 
