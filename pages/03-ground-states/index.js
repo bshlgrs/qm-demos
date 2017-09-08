@@ -99,6 +99,12 @@ Things have strictly higher energy than the ground state.
 
 ## The H2 molecule
 
+## Notes
+
+- You might notice that the ground state always has the same amount of energy. This is important. This is because the ground state is a solution to the Schrodinger equation.
+
+
+
     `}/>
 
   </Layout>

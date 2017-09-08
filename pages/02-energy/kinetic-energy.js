@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import SimpleGraph from '../../components/SimpleGraph'
+import Panel from '../../components/Panel'
 import MultipleChoiceQuestion from '../../components/MultipleChoiceQuestion'
 import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 
@@ -69,6 +70,11 @@ Just BTW, kinetic energy involves dividing by the mass of the particle.
 
 Exercise: Suppose you have a proton with the same spread as an electron. (Remember that protons weigh much more.) Which has more kinetic energy? Answer: The electron, because the proton is much heavier. This is why it's okay to treat protons as classical point particles compared to protons.
 
+
+### Optional: mathematical formalism
+
+
+
 ----
 
 Okay, so now we know how to calculate the energy of a wavefunction. Some notes:
@@ -79,6 +85,34 @@ Okay, so now we know how to calculate the energy of a wavefunction. Some notes:
 So the goal was to figure out the ground state energy of a particular potential. Now we know how to calculate the energy of a wavefunction in a potential, but we don't know how to go from that to reasoning about the properties of the ground states of a potential. We're going to get to that next.
 
  `}/>
+
+
+    <Panel>
+      <MarkdownWithLatex text={`
+
+#### Optional aside: Mathematical formalism
+
+Remember how we could write potential energy as
+
+$^$ \\int_{-\\infty}^{\\infty} \\Psi(x) \\cdot V(\\Psi, x) dx $^$
+
+where we're using $$V$$ as kind of a higher-order function, from a wavefunction to a different complex valued probability distribution?
+
+This formalism is really handy for kinetic energy. The kinetic energy operator (which we'll use the symbol $$T$$ for) is
+
+$^$ T(\\Psi, x) = -\\frac{1}{m} \\frac{\\partial^2}{\\partial x^2} \\Psi(x)$^$
+
+(again, we're in units such that electrons have mass 1)
+
+The total kinetic energy of a wavefunction is
+
+$^$ \\int_{-\\infty}^{\\infty} \\Psi^*(x) \\cdot T(\\Psi, x) dx $^$
+
+or, more explicitly
+
+$^$ -\\frac{1}{m} \\int_{-\\infty}^{\\infty}  \\Psi^*(x) \\cdot \\frac{\\partial^2}{\\partial x^2} \\Psi(x) dx $^$
+        `}/>
+    </Panel>
 
      <Link href="/03-ground-states/"><a>Continue</a></Link>
 

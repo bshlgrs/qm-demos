@@ -23,6 +23,8 @@ For reasons we'll explore later, this means that at the scale where chemistry ha
 - We assume that the nuclei are fixed in place, and then we analyze the behavior of the electrons in this stationary potential. In particular, we're often interested in the lowest energy configuration of the electrons for a given configuration of nuclei.
 - Once we've done that, we can analyze the motion of nuclei by using classical physics and treating the electron energy as part of the potential.
 
+DEMO HERE OF USING A POTENTIAL ENERGY FUNCTION FOR CLASSICAL MECHANICS
+
 This is just a more precise version of how we analyze springs--the springs have Hooke's law because of the ground states of the electrons. We're being principled here, is the difference. TODO
 
 So we're making a series of simplifying assumptions for the QM calculations we're going to do:

@@ -23,7 +23,7 @@ In classical mechanics, we describe a system in terms of a set of dimensions. We
 
 We need 4 dimensions for the positions of these two balls in 2D:
 
-<img height="300" src="/static/img/configuration.png" />
+<img height="300" src="/static/img/configuration.jpg" />
 
 `}/>
 
@@ -101,7 +101,7 @@ This kind of graph has configurations of the entire universe on the x axis. For 
 But it gives you an important intuition: that there's a type of closeness of universes whose configurations are very similar.
 
 
-<img height="350" src="/static/img/configuration-pdf.png" />
+<img height="350" src="/static/img/configuration-pdf.jpg" />
 
 ---
 
@@ -172,6 +172,16 @@ QUESTION: Given a wavefunction, where is the particle most likely to be observed
 
 QUESTION: Match the wavefunction to the probability distribution.
 
+Physicists usually use the symbol $$\\Psi$$ (the Greek letter Psi) to refer to the wavefunction. So they'd write $$\\Psi(\\mathbb{x})$$ to refer to "the amplitude of the wavefunction $$\\Psi(\\mathbb{x})$$ at location $$\\mathbb{x}$$"
+
+One particularly important detail is that the wavefunction needs to be normalizeable.
+
+This is written
+
+$^$ \\int_{-\\infty}^{\\infty} | \\Psi(x) |^2 dx = 1 $^$
+
+where $$| \\Psi(x) |$$ means "the norm of $$\\Psi(x)$$".
+
 ### Quantum mechanics is a first order differential equation
 
 If I show you a still frame of our universe, you won't know how it should be evolved forward in time, because you also need velocities. Does the same argument apply to accellerations? No, it doesn't. Classical mechanics manages to describe everything in terms of forces which cause accelleration. All forces can be calculated from just knowing positions and velocities. So in classical mechanics, if your configuration is $$n$$ real numbers, to know the time evolution of the system you need to know $$2n$$ real numbers, so that you have all the velocities too. It is nice that in classical physics, to predict the future you only need the configuration and its time derivative, as opposed to more derivatives than that.
@@ -193,6 +203,8 @@ EXTRA READING:
 
 
 
+
+
 -----
 
 Next up we'll learn how to calculate the energy of a wavefunction.
@@ -202,7 +214,7 @@ Next up we'll learn how to calculate the energy of a wavefunction.
 - [Lecture 9 of Quantum Computing Since Democritus](https://www.scottaaronson.com/democritus/lec9.html) discusses the similar material to this post from a somewhat different perspective. One particular thing I like about his treatment is that he speculates a lot about *why* the rules are the way they are.
 - [Equivalent post from LessWrong Sequences](http://lesswrong.com/lw/pd/configurations_and_amplitude/)
 - You can take expectations of wavefunctions by integrating. ADD LINK
-
+- You don't have to describe wavefunctions in terms of positions. You can have the wavefunction be a function from some other property of the system too. TODO
 
     `}/>
 

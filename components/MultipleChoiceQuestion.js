@@ -1,6 +1,7 @@
 import styles1 from '../static/css/bootstrap.min.css';
 import styles2 from '../static/css/now-ui-kit.css';
 import applyStyles from 'next-style-loader/applyStyles';
+import Panel from './Panel';
 
 class MultipleChoiceQuestion extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class MultipleChoiceQuestion extends React.Component {
     }
 
     return <div style={{'marginBottom': '30px'}}>
-      <div style={mainStyle} className='panel-body'>
+      <Panel>
 
         <p>{this.props.question}</p>
 
@@ -68,7 +69,7 @@ class MultipleChoiceQuestion extends React.Component {
             </button>}
           </div>}
         </div>
-      </div>
+      </Panel>
     </div>
   }
 }
