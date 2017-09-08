@@ -55,7 +55,14 @@ Other points I haven't made:
 
 
 
-## Shorter version
+## Things I don't understand
 
-- QM has wavefunctions.
-- Their energies are a function of their potential energy and their kinetic energy.
+- What kind of thing is spin
+  - I should probably relearn quantum computation
+
+## Things to mention at the end
+
+- DFT
+- Periodic solids
+- Relativistic corrections
+- Where to go from here: QFT

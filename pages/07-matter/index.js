@@ -25,6 +25,21 @@ Materials science:
   - thermal vs electric conductivity
 - Opacity, transparency
 
+Big things we've not touched:
+
+- Time evolution of the wavefunction
+
+
+#### Guide to a typical quantum mechanics textbook:
+
+The big unusual thing I did here is put stationary states in as basically an afterthought. In QM courses, you spend the majority of your effort learning about how to find stationary states of systems. This makes a lot of sense for a lot of reasons. I didn't cover it because it involves a bunch of hard math, and you don't actually need to understand it perfectly to understand chemistry.
+
+Griffiths:
+
+- Chapter 1: Introduction. Single-particle wavefunctions.
+
+
+
     `}/>
 
 

@@ -16,7 +16,7 @@ const Thing01 = () => {
     />
   }
 
-  return <Layout>
+  return
     <CarouselMultipleChoiceQuestion
       question={<div>
         <p>Consider a particle with this wavefunction:</p>
@@ -37,8 +37,6 @@ const Thing01 = () => {
           <button className='btn btn-primary'>Next</button>
         </Link>}
       />
-
-  </Layout>
 }
 
 export default Thing01;

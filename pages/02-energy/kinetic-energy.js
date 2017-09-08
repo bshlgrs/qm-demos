@@ -62,11 +62,12 @@ exercise: select places where it's got positive or negative KE.
 
 exercise: figure out which wavefunctions have high or low total KE.
 
-Just BTW, kinetic energy involves dividing by the mass of the particle.
 
 NOTE: the thing we're really doing here is integrating
 
- Exercise: Suppose you have a proton with the same spread as an electron. (Remember that protons weigh much more.) Which has more kinetic energy? Answer: The electron, because the proton is much heavier. This is why it's okay to treat protons as classical point particles compared to protons.
+Just BTW, kinetic energy involves dividing by the mass of the particle.
+
+Exercise: Suppose you have a proton with the same spread as an electron. (Remember that protons weigh much more.) Which has more kinetic energy? Answer: The electron, because the proton is much heavier. This is why it's okay to treat protons as classical point particles compared to protons.
 
 ----
 

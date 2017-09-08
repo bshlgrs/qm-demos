@@ -7,24 +7,7 @@ import MultipleChoiceQuestion from '../../components/MultipleChoiceQuestion'
 import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 import ReactSlider from 'react-slider'
 
-const VisualizationPage = () => (
-  <Layout naked>
-    <div style={{margin: '20px'}}>
-      <h2>Identical particles</h2>
-      <Row >
-       <div>
-          {leftColumn}
-          {leftColumn}
-          {leftColumn}
-          {leftColumn}
-        </div>
-        <div style={{alignSelf: 'flex-start', marginLeft: '20px'}}>
-          <RightColumn />
-        </div>
-      </Row>
-    </div>
-  </Layout>
-)
+
 
 const leftColumn = <MarkdownWithLatex text={`
 Your wavefunction is like a probability distribution, right. LINK TO LESSON 1
@@ -55,7 +38,7 @@ Do the same exercise with bosons
 
 `}/>
 
-class RightColumn extends React.Component {
+class VisualizationPage extends React.Component {
   constructor () {
     super();
     this.state = {
@@ -67,23 +50,7 @@ class RightColumn extends React.Component {
     }
   }
 
-  componentDidUpdate () {
-    this.renderFunction();
-  }
-
-  componentDidMount () {
-    this.renderFunction();
-  }
-
-  renderFunction () {
-    // window.functionPlot({
-    //   target: '#quadratic',
-    //   data: [{
-    //     fn: 'x^2'
-    //   }]
-    // })
-  }
-  render () {
+  renderRightColumn () {
     const { aMeanInput, bMeanInput, aVarInput, bVarInput, conditionedPositionInput } = this.state;
     const aMean = (aMeanInput - 50) * 3 / 100 - 0.05;
     const bMean = (bMeanInput - 50) * 3 / 100 + 0.05;
@@ -110,15 +77,15 @@ class RightColumn extends React.Component {
     const cB = -1 + cA;
 
     return <div style={{position: 'fixed'}}>
-      {<SimpleGraph
-        xrange={[-3, 3]} yrange={[-2, 1]} xaxis={true}
+      <SimpleGraph
+        xrange={[-3, 3]} yrange={[-2, 2]} xaxis={true}
         preRenderedFunctions={[aGraph, bGraph]}
         paths={[
           {color: 'purple', path: [[conditionedPosition, 2], [conditionedPosition, -2]]}
         ]}
         width={500}
         detail={30}
-      />}
+      />
 
       <Row>
         <div>
@@ -163,7 +130,7 @@ class RightColumn extends React.Component {
 
       <div>
         <SimpleGraph
-          xrange={[-3, 3]} yrange={[-2, 1]} xaxis={true}
+          xrange={[-3, 3]} yrange={[-2, 2]} xaxis={true}
           functions={[
             {color: 'blue', fn: (x) => cA * aFunc(x) },
             {color: 'red', fn: (x) => cB * bFunc(x)},
@@ -176,14 +143,26 @@ class RightColumn extends React.Component {
           detail={30}
         />
       </div>
-
-      <div>
-        {aAtPosition} {bAtPosition}<div> {cA} {cB}</div>
-      </div>
     </div>;
+  }
+
+  render () {
+    return <Layout naked>
+      <div style={{margin: '20px'}}>
+        <h2>Identical particles</h2>
+        <Row >
+         <div>
+            {leftColumn}
+          </div>
+          <div style={{alignSelf: 'flex-start', marginLeft: '20px'}}>
+            {this.renderRightColumn()}
+          </div>
+        </Row>
+      </div>
+    </Layout>;
   }
 }
 
 
 
-export default VisualizationPage
+export default VisualizationPage;

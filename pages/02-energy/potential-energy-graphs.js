@@ -15,6 +15,7 @@ const PotentialEnergyGraphsSection = () => {
       yrange={[-1, 1]}
       height={200}
       width={200}
+      detail={20}
       functions={[fn]}
     />
   }
