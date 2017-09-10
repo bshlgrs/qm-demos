@@ -53,13 +53,13 @@ so its kinetic energy is negative.
 It turns out that when you learn how particles evolve over time, you'll notice that kinetic energy corresponds nicely to the classical notion of $$\\frac 12 m v^2$$. But for now, I want you to just think of it as the factor which means that ground states are spread out.
 
 
-
-
 exercise: select the places on a wavefunction where it's got positive or negative derivative
 
 exercise: select the places where it's got positive or negative 2nd derivative
 
 exercise: select places where it's got positive or negative KE.
+
+<img src='/static/img/ke-exercise-mockup.jpg' height='500'/>
 
 exercise: figure out which wavefunctions have high or low total KE.
 
@@ -70,19 +70,6 @@ Just BTW, kinetic energy involves dividing by the mass of the particle.
 
 Exercise: Suppose you have a proton with the same spread as an electron. (Remember that protons weigh much more.) Which has more kinetic energy? Answer: The electron, because the proton is much heavier. This is why it's okay to treat protons as classical point particles compared to protons.
 
-
-### Optional: mathematical formalism
-
-
-
-----
-
-Okay, so now we know how to calculate the energy of a wavefunction. Some notes:
-
-- Kinetic energy can be calculated totally ignoring the potential.
-- Potential energy can be calculated totally ignoring the complex phase of the wavefunction.
-
-So the goal was to figure out the ground state energy of a particular potential. Now we know how to calculate the energy of a wavefunction in a potential, but we don't know how to go from that to reasoning about the properties of the ground states of a potential. We're going to get to that next.
 
  `}/>
 
@@ -113,6 +100,18 @@ or, more explicitly
 $^$ -\\frac{1}{m} \\int_{-\\infty}^{\\infty}  \\Psi^*(x) \\cdot \\frac{\\partial^2}{\\partial x^2} \\Psi(x) dx $^$
         `}/>
     </Panel>
+
+<MarkdownWithLatex text={`
+
+----
+
+Okay, so now we know how to calculate the energy of a wavefunction. Some notes:
+
+- Kinetic energy can be calculated totally ignoring the potential.
+- Potential energy can be calculated totally ignoring the complex phase of the wavefunction.
+
+So the goal was to figure out the ground state energy of a particular potential. Now we know how to calculate the energy of a wavefunction in a potential, but we don't know how to go from that to reasoning about the properties of the ground states of a potential. We're going to get to that next.
+        `}/>
 
      <Link href="/03-ground-states/"><a>Continue</a></Link>
 

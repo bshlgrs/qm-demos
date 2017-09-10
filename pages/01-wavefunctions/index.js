@@ -10,21 +10,25 @@ const Index1 = () => (
     <h2>Wavefunctions</h2>
     <MarkdownWithLatex text={`
 
-Wavefunctions are the fundamental objects of QM. In classical mechanics, you talk about things like "I had a ball at position y=5, then it fell down to y=2 because of gravity". In QM, you say "the wavefunction used to be this, and now the wavefunction is that".
+Wavefunctions are the mathematical objects we use to describe the states of quantum systems. In classical mechanics, you talk about things like "I had a ball at position y=5, then it fell down to y=2 because of gravity". In QM, you say "the wavefunction used to be this, and now the wavefunction is that".
 
 We'll revisit the classical way to describe the state of a system, and then explain how wavefunctions are build on top of that concept.
 
 ### Classical configurations
 
-TODO: port [LessWrong](http://lesswrong.com/lw/pi/classical_configuration_spaces/) explanation to here.
+[LessWrong](http://lesswrong.com/lw/pi/classical_configuration_spaces/) has a great explanation of classical configuration spaces. You should go read that.
 
-In classical mechanics, we describe a system in terms of a set of dimensions. We need to know one number for each dimension for the position, and if we want to know the velocities, we'd need one number for each dimension saying the rate at which the position along that dimension is changing.
+Key points:
 
+- In classical physics, configuration spaces are a way of describing the whole configuration of a system as a single point in a higher-dimensional space.
 
-We need 4 dimensions for the positions of these two balls in 2D:
+So need 4 dimensions for the positions of these two balls in 2D:
 
 <img height="300" src="/static/img/configuration.jpg" />
 
+Note that to describe the evolution of a classical system over time, you not only need to give one number for every dimension to describe the positions of everything in the system, you also need to give one number per dimension to describe the velocities.
+
+Interestingly, classical physics only requires the positions and velocities--if you know those, you can calculate the accelerations on all the particles and figure out the time evolution of your system.
 `}/>
 
 
@@ -36,7 +40,7 @@ We need 4 dimensions for the positions of these two balls in 2D:
       ]}
       correctAnswerIdx={0}
       explanation={<div>
-        <p>We can describe the position with just one variable, theta. TODO.</p>
+        <p>We can describe the position with just one variable, theta.</p>
 
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Oscillating_pendulum.gif?w=240" />
       </div>}
@@ -49,20 +53,18 @@ We need 4 dimensions for the positions of these two balls in 2D:
 
 In quantum mechanics, we need to describe things not just in terms of a configuration, but in terms of weights for every possible configuration. It's a lot like as if we had a probability distribution over configurations.
 
-Our configurations are part of continuous space, so instead of a discrete probability distribution, we're going to be using probability density functions, which are TODO. ABBREVIATE THEM AS PDFs.
-
-CONFUSING ASIDE WHICH I SHOULD REMOVE: We don't have to represent things as prbability density functions. Here's another way we could represent probability distributions: a function from the interval [0, 1] to the space. (This is known as the [quantile function](https://en.wikipedia.org/wiki/Quantile_function) or inverse cumulative probability density function.) Quantile functions are easier to generate samples from, but they're much harder to work with in practice: you can't very easily find the quantile function of a complicated pdf, and you can't combine simple quantile functions into more complicated ones. More importantly, it turns out that quantum mechanics has laws such that the PDF is more like the real thing that is evolving.
+Our configurations are part of continuous space, so instead of a discrete probability distribution, we're going to be using probability density functions. A probability density function .
 
 `}/>
 
     <MultipleChoiceQuestion
-      question="What is the type of a PDF over primary colors?"
+      question="What is the type of a probability distribution over primary colors?"
       answers={[
         <code>PrimaryColor -> Real</code>,
         <code>Real -> PrimaryColor</code>
       ]}
       correctAnswerIdx={0}
-      explanation="TODO"
+      explanation="The space of primary colors is discrete, so this is a probability distribution rather than a probability density function."
       />
 
     <MultipleChoiceQuestion
@@ -73,7 +75,7 @@ CONFUSING ASIDE WHICH I SHOULD REMOVE: We don't have to represent things as prba
         <code>Int -> Real</code>
       ]}
       correctAnswerIdx={0}
-      explanation="TODO"
+      explanation="This one is an actual probability density function, because the different configurations form a continuous space."
       />
 
     <MultipleChoiceQuestion
@@ -83,7 +85,6 @@ CONFUSING ASIDE WHICH I SHOULD REMOVE: We don't have to represent things as prba
         <code>(Real, Real, Real) -> Real</code>
       ]}
       correctAnswerIdx={1}
-      explanation="TODO"
       />
 
 <MarkdownWithLatex text={`
@@ -105,7 +106,7 @@ But it gives you an important intuition: that there's a type of closeness of uni
 
 ---
 
-You might say, "Okay, but I could describe classical mechanics in terms of probabilities too. Like, maybe I have the system '30% chance that the ball is going downwards at 5 ms<sup>-1</sup> and 70% that it's going upwards at that speed'. I can evolve that system through time--given that gravity accellerates you downwards at about 10 meters per second per second, after 0.1 seconds my state is '70% chance of ball going downward at 6ms<sup>-1</sup>, 30% that it's going up at 4ms<sup>-1</sup>."
+You might say, "Okay, but I could describe classical mechanics in terms of probabilities too. Like, maybe I have the system '30% chance that the ball is going downwards at 5 ms<sup>-1</sup> and 70% that it's going upwards at that speed'. I can evolve that system through time--given that gravity accelerates you downwards at about 10 meters per second per second, after 0.1 seconds my state is '70% chance of ball going downward at 6ms<sup>-1</sup>, 30% that it's going up at 4ms<sup>-1</sup>."
 
 TODO: decide whether to include positions in the above configurations
 
@@ -184,7 +185,7 @@ where $$| \\Psi(x) |$$ means "the norm of $$\\Psi(x)$$".
 
 ### Quantum mechanics is a first order differential equation
 
-If I show you a still frame of our universe, you won't know how it should be evolved forward in time, because you also need velocities. Does the same argument apply to accellerations? No, it doesn't. Classical mechanics manages to describe everything in terms of forces which cause accelleration. All forces can be calculated from just knowing positions and velocities. So in classical mechanics, if your configuration is $$n$$ real numbers, to know the time evolution of the system you need to know $$2n$$ real numbers, so that you have all the velocities too. It is nice that in classical physics, to predict the future you only need the configuration and its time derivative, as opposed to more derivatives than that.
+If I show you a still frame of our universe, you won't know how it should be evolved forward in time, because you also need velocities. Does the same argument apply to accelerations? No, it doesn't. Classical mechanics manages to describe everything in terms of forces which cause acceleration. All forces can be calculated from just knowing positions and velocities. So in classical mechanics, if your configuration is $$n$$ real numbers, to know the time evolution of the system you need to know $$2n$$ real numbers, so that you have all the velocities too. It is nice that in classical physics, to predict the future you only need the configuration and its time derivative, as opposed to more derivatives than that.
 
 (I could describe this in terms of 'the last two frames' instead of 'positions and velocities', maybe that's better.)
 

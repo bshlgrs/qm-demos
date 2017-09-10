@@ -29,6 +29,12 @@ const Index = () => (
     <p><Link href="/06-identical-particles">
       <a>Identical particles</a>
     </Link></p>
+
+    <p>And some other stuff:</p>
+
+    <p><Link href="/schrodinger-eq-vs-wave-eq">
+      <a>Schrodinger equation vs wave equation</a>
+    </Link></p>
   </Layout>
 )
 

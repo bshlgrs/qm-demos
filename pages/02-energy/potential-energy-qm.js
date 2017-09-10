@@ -50,13 +50,15 @@ Potential energy of a single-electron wavefunction can be calculated with the fo
 
 $^$ \\int_{-\\infty}^{\\infty} | \\Psi(x) |^2 \\cdot V(x) dx $^$
 
+(where the notation $$|a|$$ means "the norm of $$a$$".)
+
 It turns out that it will be more convenient for us to write it a different way. We normally instead define the total potential energy of a wavefunction like this:
 
 $^$ \\int_{-\\infty}^{\\infty} \\Psi^*(x) \\cdot V(x) \\cdot \\Psi(x) dx $^$
 
 This uses the notation $$a^*$$ to mean "the [complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of $$a$$".
 
-The identity we're using here is that $$a^* \\cdot a = |a|^2$$.
+Why are these equivalent? One relevant identity is that $$z^* \\cdot z = |z|^2$$ for complex numbers $$z$$. To see why this is true, remember that complex numbers can be thought of as a combination of a scaling factor and a rotation. The complex conjugate of $$z$$ has the same scaling factor of $$z$$ but the opposite direction of rotation. So the rotations cancel out, and the scales multiply in the usual way. And multiplication of complex numbers is commutative, so in this case we're allowed to put the $$V(x)$$ in the middle.
 
 It turns out that it's convenient to think of wavefunctions as vectors, and then potential energy is an operator which takes it to another vector. Then we write things as the inner product. TODO, consider this.
 
