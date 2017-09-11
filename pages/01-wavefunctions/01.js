@@ -16,8 +16,7 @@ const Thing01 = () => {
     />
   }
 
-  return
-    <CarouselMultipleChoiceQuestion
+  return <CarouselMultipleChoiceQuestion
       question={<div>
         <p>Consider a particle with this wavefunction:</p>
 
@@ -33,10 +32,8 @@ const Thing01 = () => {
         graph({color: 'black', fn: (x) => Math.abs(-2 * x * Math.exp(-(x**2)))})
       ]}
       correctAnswerIdx={2}
-      correctText={<Link href='./02'>
-          <button className='btn btn-primary'>Next</button>
-        </Link>}
-      />
+      incorrectText="Remember that probability distributions always need to be positive. TODO: add note here that explains why it's not the absolute value one."
+      />;
 }
 
 export default Thing01;

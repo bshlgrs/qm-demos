@@ -1,5 +1,5 @@
 const Row = (props) => {
-  return <div>
+  return <div style={props.style || {}}>
     <style global jsx>{`
         .row-component {
           display: flex;

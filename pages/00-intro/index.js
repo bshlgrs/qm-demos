@@ -81,7 +81,7 @@ But on Earth, physics does something very different. Instead of different atoms 
 This is an extremely surprising and interesting result. We live in a universe whose physics mostly leads to noise and turbulence, but at one very narrow temperature range, we get matter that behaves like the world around us. I think this is fascinating, and I think it's very interesting to learn the physics that explains where this complexity comes from.
 
 
-FRAGMENT: I am quite confident that plasma does not support life. Nor does classical gravity.
+FRAGMENT: I am quite confident that you can't have life arising inside plasma, or arising just through classical gravity interactions.
 
 FRAGMENT: As a computer scientist, I am super interested in the ways that complex behavior arises from simple rules--finding out that [weird things are Turing complete](http://beza1e1.tuxen.de/articles/accidentally_turing_complete.html) is one of the top computer scientist passtimes. So when faced with the giant body of human knowledge about physics, I think it's quite natural to try to look for the part which explains how we can do computation.
 
@@ -96,39 +96,35 @@ The physical properties of matter mostly come from the quantum mechanical behavi
 
 (For our purposes here, we don't need to care about the internal structure of nuclei--we'll model them as fundamental particles whose only properties are their mass and their charge.)
 
-#### The Born-Oppenheimer approximation
+---
 
 The quantum mechanical behavior of electrons is quite complicated and hard to analyze. So we're going to take an approach called the [Born-Oppenheimer approximation](https://en.wikipedia.org/wiki/Born%E2%80%93Oppenheimer_approximation).
 
 The key insight behind this approximation is that electrons move so much more quickly than protons that from their perspective, the protons are basically totally stationary, and from the perspective of the protons, the electrons have so little momentum that they almost instantly adapt to the changes in the electric field that result from the protons moving around.
 
-This suggests that we reason about molecules
+This suggests that we reason about molecules in two stages. When we want to figure out (for example) the bond length of the H2 molecule, we're going to think about it separately from the perspectives of the electrons and the protons.
 
-Here's what we do. Suppose there's some system we want to analyze--for example, maybe we want to figure out the bond length of the hydrogen molecule. We're going to do this in two steps.
+For the electrons, we're going to analyze the system in a wide variety of different nuclei configurations.
 
+And then we'll just try to figure out the configuration of the nuclei which minimizes the total energy of the system.
 
+For example, in the following panel, you can see how the minimum energy electron configuration changes as a function of the distance between the protons. The electron energy gets smaller the closer the protons get towards each other. However, the protons repel each other. The equilibrium point is where these two forces balance out.
 
-The quantum mechanical behavior of electrons is quite complicated and hard to analyze. So instead of trying to model all of the quantum mechanics of electrons in the presence of nuclei, we're going to narrow our scope significantly through a series of approximations and judicious choices of what questions we want to be able to answer. This approach is known as the Born-Oppenheimer approximation, and it has a few steps.
+TODO: check how easy it is for people to think about potential energy fields
 
-As I said above, the first approximation we make is modelling nuclei as classical particles which can be modelled purely in terms of their positions, masses, and charges.
+<img src="/static/img/born-oppenheimer-picture.jpg" />
 
-Secondly, we're only consider the case where the nuclei are stationary. This approximation is valid because nuclei are so much heavier than electrons that from the perspective of the electrons they might as well be standing still. (This is known as the [Born-Oppenheimer approximation](https://en.wikipedia.org/wiki/Born%E2%80%93Oppenheimer_approximation).)
+With this approach, we can answer a wide variety of questions. For example:
 
-Thirdly, we're not going to spend too much time figuring out how electrons behave in general, even just in the presence of a stationary collection of nuclei. We're only going to try to figure out the lowest energy configuration of the electrons.
+- We can figure out the configuration of molecules by finding their lowest energy configuration.
+- We can determine that implausible molecules like O<sub>6</sub> are not going to be stable, by observing that the lowest-energy configuration of all these nuclei is "not in the same molecule"
+- The number that we calculate as the minimum energy of a molecule is its chemical potential energy. We can use these to determine how much energy will be released by various chemical reactions.
+- We can calculate the intermolecular forces that determine whether a substance is a solid, liquid or gas.
+- We can analyze the properties of a solid (eg its conductivity or ductility) by looking at the configurations of electrons that we find using this method.
 
+(It turns out that this type of calculation is actually computationally intractable for large molecules, and we have to resort to other methods. But this is the type of calculation that is in some sense being approximated by fundamental physics.)
 
-
-DEMO HERE OF USING A POTENTIAL ENERGY FUNCTION FOR CLASSICAL MECHANICS
-
-This is just a more precise version of how we analyze springs--the springs have Hooke's law because of the ground states of the electrons. We're being principled here, is the difference. TODO
-
-So we're making a series of simplifying assumptions for the QM calculations we're going to do:
-
-- Nuclei are fundamental.
-- Nuclei are classical.
-- Nuclei are still
-- We only care about the lowest energy possible states of the electrons.
-- Often, we don't even care about the lowest energy state, we just want to know the lowest energy.
+----
 
 This suggests a path forward through quantum mechanics. Here's what we're going to learn:
 
@@ -153,8 +149,8 @@ This series teaches a pretty eclectic selection of material. The concepts and or
 Other QM sources I like:
 
 - [Griffiths](https://www.abebooks.com/9780131118928/Introduction-Quantum-Mechanics-2nd-Edition-0131118927/plp). This is the classic QM text.
-- [Quantum Computing Since Democritus](https://www.scottaaronson.com/democritus/). This focuses mostly on how wavefunctions work and doesn't talk about the physics of electrons.
-- Less Wrong QM Sequence. This one is mostly focused on what the wavefunction is.
+- [Quantum Computing Since Democritus](https://www.scottaaronson.com/democritus/), by Scott Aaronson. This focuses mostly on how wavefunctions work and doesn't talk about the physics of electrons.
+- [Less Wrong QM Sequence](http://lesswrong.com/lw/r6/an_intuitive_explanation_of_quantum_mechanics/). This one is mostly focused on what the wavefunction is. It does a great job of covering what decoherence is. I agree with this series about the interpretation of quantum mechanics more than I agree with Griffiths or Aaronson.
 
     `}/>
 

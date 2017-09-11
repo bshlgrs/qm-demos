@@ -1,4 +1,5 @@
 import Row from './Row'
+import Panel from './Panel'
 
 class CarouselMultipleChoiceQuestion extends React.Component {
   constructor(props) {
@@ -21,8 +22,15 @@ class CarouselMultipleChoiceQuestion extends React.Component {
       (correct ? 'panel-success' : 'panel-danger') :
       'panel-default';
 
-    return <div className="panel panel-default">
-      <div className="panel-body">
+    const innerStyle = {
+      padding: "20px",
+      marginTop: "20px",
+      backgroundColor: correct ? "#dce8cf" : "#f7cfcf",
+      boxShadow: "2px 2px 2px #b9b9b9"
+    }
+
+    return <div style={{'marginBottom': '30px'}}>
+      <Panel>
         <h4>Question</h4>
         <div>{this.props.question}</div>
 
@@ -41,31 +49,28 @@ class CarouselMultipleChoiceQuestion extends React.Component {
               className='btn btn-default'
               disabled={this.state.submitted}
               onClick={() => this.state.submitted || this.goRight()}>
-              <i className='fa fa-arrow-right' />
+              Next option <i className='fa fa-arrow-right' />
             </button>
           </div>
         </Row>
 
-        {this.state.submitted && <div className={`panel ${panelAnswerClass}`}>
-          <div className='panel-heading'>
-            <h3 className='panel-title'>{(correct ? "Correct!" : "Wrong!")}
-            </h3>
-          </div>
-          <div className="panel-body">
+        <div>
+          {this.state.submitted && <div style={innerStyle}>
+            <div className='panel-title'>
+              {(correct ? "Correct!" : "Wrong!")}
+            </div>
             {this.props.explanation}
-            {correct ? this.props.correctText : this.props.incorrectText}
-            {!correct &&
-              <button
-                className='btn btn-primary'
-                onClick={() => this.setState({submitted: false})}>
-                Try again
-              </button>
-            }
-          </div>
-        </div>}
-      </div>
+            <div>{correct ? this.props.correctText : this.props.incorrectText}</div>
+            {!correct && <button
+              onClick={() => this.setState({submitted: false, answerIdx: 0})}
+              className="btn btn-primary">
+              Try again
+            </button>}
+          </div>}
+        </div>
+      </Panel>
     </div>
   }
 }
 
-export default CarouselMultipleChoiceQuestion
+export default CarouselMultipleChoiceQuestion;

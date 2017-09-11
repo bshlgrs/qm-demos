@@ -12,6 +12,51 @@ const SchrodingerEqVsWaveEq = () => (
 
 The connection between the wave equation and the Schrodinger equation is interesting, but I don't normally see people spell it out as explicitly as I'd like.
 
+We can write both the wave equation and the Schrödinger equation as a pair of coupled first-order differential equations. To do this with the wave equation, we split it into the functions describing the displacement and velocity of the wavefunction at all positions on the wave; for the Schrodinger equation, we split the wavefunction into real and imaginary parts.
+
+Let's put these two pairs of equations next to each other and look at them:
+`}/>
+
+<Row>
+  <div>
+    <MarkdownWithLatex text={`
+**The wave equation**
+
+$^$
+\\frac{d}{d t} s = v $^$
+
+$^$ \\frac{d}{d t} v = \\frac{\\partial^2}{\\partial x^2}  s
+$^$
+
+`}/>
+
+  </div>
+  <div>
+<MarkdownWithLatex text={`
+**The Schrödinger equation**
+
+$^$ \\frac{d}{d t} \\text{Re}(\\Psi) = - \\frac{\\partial^2}{\\partial x^2} \\text{Im}(\\Psi))
+$^$
+$^$ \\frac{d}{d t} \\text{Im}(\\Psi) =  \\frac{\\partial^2}{\\partial x^2} \\text{Re}(\\Psi))
+$^$
+
+`}/>
+  </div>
+</Row>
+
+<MarkdownWithLatex text={`
+The second pair of equations are identical. The difference is with the first pair.
+
+Let's look at how this plays out:
+
+- QM amplitudes are necessarily centered around zero, whereas there's no such centering around position 0 that comes directly out of the wave equation.
+- These equations conserve some type of measure, but the type of measure conserved is different for the two wavefunctions. The Schrödinger equation preserves the L2 norm and the wave equation preserves the result of directly integrating the wavefunction.
+- The Schrödinger equation isn't particularly opinionated about which of the two equations is which. You just need to choose two orthogonal unit vectors in the complex plane and you're done. In contrast, the wave equation only has the symmetry which comes from inverting the direction in which you're measuring displacement.
+
+TODO: note more things here
+
+The rest of this post is just going into more detail about where I got these equations from.
+
 ### The wave equation
 
 The wave equation for the time evolution of a (classical) wavefunction $$s(x)$$ is as follows:
@@ -85,45 +130,6 @@ $^$ \\frac{d}{d t} \\text{Re}(\\Psi) = - \\frac{\\partial^2}{\\partial x^2} \\te
 $^$
 $^$ \\frac{d}{d t} \\text{Im}(\\Psi) =  \\frac{\\partial^2}{\\partial x^2} \\text{Re}(\\Psi))
 $^$
-
-### Comparison
-
-Let's put these two equations next to each other and look at them:
-`}/>
-
-<Row>
-  <div>
-    <MarkdownWithLatex text={`
-**The wave equation**
-
-$^$
-\\frac{d}{d t} s = v $^$
-
-$^$ \\frac{d}{d t} v = \\frac{\\partial^2}{\\partial x^2}  s
-$^$
-
-`}/>
-
-  </div>
-  <div>
-<MarkdownWithLatex text={`
-**The Schrödinger equation**
-
-$^$ \\frac{d}{d t} \\text{Re}(\\Psi) = - \\frac{\\partial^2}{\\partial x^2} \\text{Im}(\\Psi))
-$^$
-$^$ \\frac{d}{d t} \\text{Im}(\\Psi) =  \\frac{\\partial^2}{\\partial x^2} \\text{Re}(\\Psi))
-$^$
-
-`}/>
-  </div>
-</Row>
-
-<MarkdownWithLatex text={`
-The second pair of equations are identical.
-
-The difference is with the first pair.
-
-- QM amplitudes are necessarily centered around zero, whereas there's no such centering around position 0 that comes directly out of the wave equation.
 
 
 `}/>
