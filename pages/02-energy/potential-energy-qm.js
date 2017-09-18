@@ -8,6 +8,8 @@ import CarouselMultipleChoiceQuestion from '../../components/CarouselMultipleCho
 import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 import MultipleChoiceQuestion from '../../components/MultipleChoiceQuestion'
 
+import PotentialEnergySliderDemo from '../../content/PotentialEnergySliderDemo'
+
 
 const PotentialEnergyInQm = () => {
   return <div>
@@ -25,7 +27,12 @@ We take the expectation. This makes sense--it's the average of what you'd get if
 
 Let's practice a bunch of times.
 
-Demo: slider to move a wavefunction around, showing its potential energy.
+    `}/>
+
+    <PotentialEnergySliderDemo />
+
+
+      <MarkdownWithLatex text={`
 
 Questions:
 
@@ -35,7 +42,7 @@ TODO: COME BACK HERE AND MAKE IT CLEARER THAT PE IS AN OPERATOR
 
 So we know how to calculate the potential energy of a whole wavefunction, as well as the potential energy at any point.
 
-
+TODO: ask what the potential energy is if the PE is 1 everywhere. (answer: obviously 1.)
 
     `}/>
 

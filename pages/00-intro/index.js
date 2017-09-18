@@ -102,7 +102,11 @@ The quantum mechanical behavior of electrons is quite complicated and hard to an
 
 The key insight behind this approximation is that electrons move so much more quickly than protons that from their perspective, the protons are basically totally stationary, and from the perspective of the protons, the electrons have so little momentum that they almost instantly adapt to the changes in the electric field that result from the protons moving around.
 
+phrased differently: no matter what the protons do, the electrons go into their minimum energy configuration immediately.
+
 This suggests that we reason about molecules in two stages. When we want to figure out (for example) the bond length of the H2 molecule, we're going to think about it separately from the perspectives of the electrons and the protons.
+
+FRAGMENT: this is like how we analyze springs etc normally, but we're looking inside the black box now.
 
 For the electrons, we're going to analyze the system in a wide variety of different nuclei configurations.
 

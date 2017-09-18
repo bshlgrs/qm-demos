@@ -6,6 +6,7 @@ import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 import PotentialEnergyGraphsSection from './potential-energy-graphs'
 import PotentialEnergyInQm from './potential-energy-qm'
 import PositiveVsNegativePotentialEnergy from './positive-vs-negative'
+import PotentialEnergySliderDemo from '../../content/PotentialEnergySliderDemo'
 
 
 const PotentialEnergyPage = () => (

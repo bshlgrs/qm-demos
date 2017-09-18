@@ -28,6 +28,18 @@ class GraphFunction extends React.Component {
     const detail = this.props.detail || 50;
 
     const numbers = getListOfNumbers(xMin, detail, xSize / detail);
+    const deSci = (x) => x.toFixed(5);
+    const path = numbers.map((x) => [deSci(x), deSci(fn(x))]);
+
+    return <path
+      stroke={color || 'black'}
+      strokeWidth='1'
+      vectorEffect='non-scaling-stroke'
+      fill='none'
+      d={
+          `M ${path[0][0]} ${path[0][1]} ` +
+          path.map((x) => `L ${x[0]} ${x[1]} `).join(" ")
+        } />;
 
     return <g>
       {numbers.map((x, idx) => {

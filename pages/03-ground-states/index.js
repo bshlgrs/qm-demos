@@ -4,11 +4,13 @@ import SimpleGraph from '../../components/SimpleGraph'
 import MultipleChoiceQuestion from '../../components/MultipleChoiceQuestion'
 import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 import Row from '../../components/Row'
-
+import TotalEnergySliderDemo from '../../content/TotalEnergySliderDemo'
 
 const Index3 = () => (
-  <Layout>
+  <Layout naked>
     <h2>Ground states</h2>
+
+    <TotalEnergySliderDemo />
     <MarkdownWithLatex text={`
 Last time, we talked about how we calculate the total energy of a wavefunction. This time, we're going to look at what the ground states look like.
 

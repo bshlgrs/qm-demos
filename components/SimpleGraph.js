@@ -6,10 +6,17 @@ class GraphPath extends React.PureComponent {
   render () {
     const { color, path, tangent } = this.props.options;
 
-    // TODO: tangent
+    // return <path
+    //   d={`M${deSci(xStart)} ${deSci(yStart)} L${deSci(xEnd)} ${deSci(yEnd)}`}
+    //   stroke={color || 'black'}
+    //   strokeWidth='1'
+    //   vectorEffect='non-scaling-stroke'
+    //   />
+
     return <g>
       {path.map((point, idx) => {
         const nextPoint = path[idx + 1];
+
         if (!nextPoint) {
           return null;
         } else {

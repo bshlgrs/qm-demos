@@ -105,6 +105,14 @@ $^$ -\\frac{1}{m} \\int_{-\\infty}^{\\infty}  \\Psi^*(x) \\cdot \\frac{\\partial
 
 ----
 
+FRAGMENT: BTW, this is totally a justification for why we take the squared modulus of the amplitude.
+
+-------
+
+OTHER FRAGMENT: Why is this called the kinetic energy?
+
+----
+
 Okay, so now we know how to calculate the energy of a wavefunction. Some notes:
 
 - Kinetic energy can be calculated totally ignoring the potential.

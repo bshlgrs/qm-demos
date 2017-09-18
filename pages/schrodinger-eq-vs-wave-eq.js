@@ -47,11 +47,14 @@ $^$
 <MarkdownWithLatex text={`
 The second pair of equations are identical. The difference is with the first pair.
 
-Let's look at how this plays out:
+Here are some differences:
 
-- QM amplitudes are necessarily centered around zero, whereas there's no such centering around position 0 that comes directly out of the wave equation.
-- These equations conserve some type of measure, but the type of measure conserved is different for the two wavefunctions. The Schrödinger equation preserves the L2 norm and the wave equation preserves the result of directly integrating the wavefunction.
-- The Schrödinger equation isn't particularly opinionated about which of the two equations is which. You just need to choose two orthogonal unit vectors in the complex plane and you're done. In contrast, the wave equation only has the symmetry which comes from inverting the direction in which you're measuring displacement.
+- QM amplitudes are necessarily centered around zero in both the real and imaginary components, while the wave equation only has a symmetry around 0 for velocity, not position.
+- These equations conserve some type of measure, but the type of measure conserved is different for the two wavefunctions. The Schrödinger equation preserves the L2 norm and the wave equation preserves the integral of the wavefunction.
+- The Schrödinger equation is linear in both components, while TODO
+- The Schrödinger equation isn't particularly opinionated about which of the two equations is which--the equations are invariant to phase shifts of the entire wavefunction. In contrast, the wave equation only has the symmetry which comes from inverting the direction in which you're measuring displacement.
+
+Overall, I'd summarize the Schrödinger equation as the simplest and most symmetrical way of describing
 
 TODO: note more things here
 
