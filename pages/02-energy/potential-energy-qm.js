@@ -19,35 +19,49 @@ const PotentialEnergyInQm = () => {
 
 Okay, so none of that stuff was about quantum mechanics; it was all about classical ideas. How do we translate it to quantum mechanics?
 
-In QM, our systems are wavefunctions rather than just single configurations. How should we say what the potential energy is?
+In QM, our systems are wavefunctions rather than just single configurations. How should we define the potential energy of a wavefunction given a particular potential function?
 
-Can you please type your guess about how we might do this? []
+(You can take a minuteto think about this if you want)
 
-We take the expectation. This makes sense--it's the average of what you'd get if you turned the particle into a classical particle in one position and saw what its potential energy was.
-
-Let's practice a bunch of times.
+The answer is pretty natural: We take the expectation value of the potential. This makes sense--it's the average of what you'd get if you choose a position with probability determined by the wavefunction and see what the potential energy would be if the particle was there. Another reason this is nice is that if the wavefunction is very narrowly dispersed and the potential is not varying very rapidly over space, we can model the wavefunction as a particle located at a single point and approximate the PE by using the classical PE equation. (Of course, this is the approximation that we're using every time we use classical mechanics to calculate things.)
 
     `}/>
-
-    <PotentialEnergySliderDemo />
 
 
       <MarkdownWithLatex text={`
 
-Questions:
+Let's look at the following visualization of this. Because I'm a terrible UI designer, for the moment I'm going to explain this UI in text and expect you to go between reading the text and playing with the visualization.
 
-- Which of these graphs has the highest potential energy?
+- We're looking at a wavefunction. You can control the position and the spread of the wavefunction with the knobs at the top.
+- The wavefunction is in a potential shown by the black line.
+- In the lower graph, I display in red the product of the PDF of the wavefunction and the potential energy at that point. In math, the thing I display is $$|\\Psi(x)|^2 \\cdot V(x)$$, where $$|\\Psi(x)|^2$$ is the norm squared of the wavefunction. The black line is the zero point.
+- The total area under this curve is the total potential energy of the wavefunction. I display the area under the curve at the bottom.
 
-TODO: COME BACK HERE AND MAKE IT CLEARER THAT PE IS AN OPERATOR
+Fiddle around with it a little, and then scroll on for some specific questions I want you to answer with it.
 
-So we know how to calculate the potential energy of a whole wavefunction, as well as the potential energy at any point.
+    `}/>
+<PotentialEnergySliderDemo />
 
-TODO: ask what the potential energy is if the PE is 1 everywhere. (answer: obviously 1.)
+      <MarkdownWithLatex text={`
+
+Here are some activities for you to try:
+
+- Center the wavefunction in the middle of the potential well.
+    - How does its total potential energy change as you change its spread?
+    - If the spread were set to be much tighter than the UI allows, what would the PE be?
+    - If the spread were much broader than the UI allows, what would the PE be?
+- Put the wavefunction slightly off center.
+    - How does the total PE change as a function of spread?
+- In what configuration does the PE have the largest negative value?
+- In what configuration does the PE have the smallest negative value?
 
     `}/>
 
     <Panel>
       <MarkdownWithLatex text={`
+
+
+
 
 #### Optional aside: Mathematical formalism
 

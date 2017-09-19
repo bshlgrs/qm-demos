@@ -150,6 +150,8 @@ We'll conclude by tying up a few loose ends. I'll point you in the direction of 
 
 This series teaches a pretty eclectic selection of material. The concepts and order that I teach is pretty similar to some of the contents of Thijssen's "Computational Physics" chapters 3 and 4.
 
+Throughout, I am using the atomic system of units, which means that my equations have $$\\bar h$ in them less often than you might be used to. I'm doing it this way because this is what quantum chemistry people do.
+
 Other QM sources I like:
 
 - [Griffiths](https://www.abebooks.com/9780131118928/Introduction-Quantum-Mechanics-2nd-Edition-0131118927/plp). This is the classic QM text.

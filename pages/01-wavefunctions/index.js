@@ -146,7 +146,7 @@ We call the number that's mapped to an amplitude.
 
 We turn it into a probability distribution by taking the squared modulus.
 
-Why? Well we have to use *something*. The modulus makes the phase non physically real. The squared is because it lets us elegantly define things like kinetic energy.
+Why? Well we have to use *something*. The modulus makes the phase non physically real. The squared is because it lets us elegantly define things like kinetic energy, as we'll see later. Also, the absolute value function is pretty terrible to work with.
 
 `}/>
 
@@ -181,7 +181,7 @@ Great question. The answer is that in classical mechanics, if you have a distrib
 
 In quantum mechanics, you can't decompose time evolution this way. The laws of physics don't just take the different configurations and evolve them forward in time independently--interaction between the amplitudes of configurations which are similar to each other is a key part of QM.
 
-### Quantum mechanics is a first order differential equation
+#### Optional mathematical aside: Quantum mechanics is a first order differential equation
 
 TODO: flesh this out.
 
@@ -191,18 +191,14 @@ If I show you a still frame of our universe, you won't know how it should be evo
 
 QM goes even further. We don't have two kinds of fact about every configuration--its position and momentum. Instead, the wavefunction over configurations itself contains all you need to know about how the particle is going to evolve in the future.
 
-One way of looking at quantum mechanics is that it's a really simple way of building out physics which evolves according to a first order differential equation and roughly looks like it has point particles with positions and velocities when you zoom out.
+One really nice thing about quantum mechanics is that it's a really simple way of building out physics which evolves according to a first order differential equation and roughly looks like it has point particles with positions and velocities when you zoom out.
 
-This works because we have complex phase to describe velocities.
-
-We use the coileyness to describe the directions things go in. This is really neat--it means that we can describe both the approximate position and approximate momentum of a particle with just one function from its position to C.
+This all works because we can roughly use complex phase to describe velocities. The momentum of a particle is proportional to how many times its wavefunction rotates through complex phase per unit distance. This is really neat--it means that we can describe both the approximate position and approximate momentum of a particle with just one function from its position to C.
 
 
 EXTRA READING:
 
 - Ostrogradskian Instability -- your physics is unstable if it's more than second order. [StackExchange](https://physics.stackexchange.com/a/4132)
-
-
 
 -----
 

@@ -2,33 +2,43 @@
 import MarkdownWithLatex from '../components/MarkdownWithLatex'
 import SimpleGraph from '../components/SimpleGraph'
 import Panel from '../components/Panel'
+import Row from '../components/Row'
 
 
-const NORMAL_SAMPLES = [-0.7669459 ,  0.19642596, -0.45288926,  0.324858  ,  0.0706288 ,
-       -1.12468769, -0.73108482,  1.0941815 , -0.1800215 ,  0.15067677,
-        0.04444306, -0.41822803, -0.60925483, -0.1793656 , -0.70196987,
-       -0.96694065, -0.64061097, -0.16169004,  0.13424419, -0.21419127,
-       -0.26289711,  0.36503452,  0.80547879,  1.66381998,  0.18311283,
-       -0.09928612,  0.46781571,  1.64556687,  0.74505705, -0.79141306,
-       -0.96843763, -0.58066239, -0.07352963,  0.85197979,  1.81021006,
-        1.52690786,  1.44460817,  1.07959281,  0.2834112 , -1.50378533,
-       -0.28819892,  0.7723661 ,  1.06746488, -1.24793041,  0.39038565,
-        0.44866266, -0.03087875, -0.47370126,  0.07002023,  0.05610792];
+const NORMAL_SAMPLES = [-2.32634787, -2.03329754, -1.85186686, -1.71651724, -1.6068381 ,
+       -1.51365896, -1.43203141, -1.35896619, -1.29251234, -1.23132256,
+       -1.17442529, -1.12109555, -1.07077711, -1.02303323, -0.97751429,
+       -0.93393567, -0.89206228, -0.85169747, -0.81267487, -0.77485226,
+       -0.73810699, -0.70233237, -0.6674349 , -0.63333201, -0.59995035,
+       -0.5672243 , -0.53509485, -0.50350859, -0.47241694, -0.44177548,
+       -0.41154336, -0.38168284, -0.3521589 , -0.32293882, -0.29399196,
+       -0.26528942, -0.23680382, -0.20850912, -0.18038041, -0.15239373,
+       -0.12452592, -0.09675451, -0.06905754, -0.04141345, -0.01380098,
+        0.01380098,  0.04141345,  0.06905754,  0.09675451,  0.12452592,
+        0.15239373,  0.18038041,  0.20850912,  0.23680382,  0.26528942,
+        0.29399196,  0.32293882,  0.3521589 ,  0.38168284,  0.41154336,
+        0.44177548,  0.47241694,  0.50350859,  0.53509485,  0.5672243 ,
+        0.59995035,  0.63333201,  0.6674349 ,  0.70233237,  0.73810699,
+        0.77485226,  0.81267487,  0.85169747,  0.89206228,  0.93393567,
+        0.97751429,  1.02303323,  1.07077711,  1.12109555,  1.17442529,
+        1.23132256,  1.29251234,  1.35896619,  1.43203141,  1.51365896,
+        1.6068381 ,  1.71651724,  1.85186686,  2.03329754,  2.32634787];
 
 class PotentialEnergySliderDemo extends React.Component {
   constructor () {
     super();
 
-    this.state = { wavefunctionSpreadInput: 10 }
+    this.state = { wavefunctionSpreadInput: 10, wavefunctionPositionInput: 50 }
   }
 
   render () {
-    const sigma = this.state.wavefunctionSpreadInput/30 + 0.3;
+    const sigma = this.state.wavefunctionSpreadInput/30 + 0.02;
+    const mu = this.state.wavefunctionPositionInput / 25 - 2;
 
     const wavefunctionConst = (2 / 3.1416)**(0.25);
-    const wavefunction = (x) => (wavefunctionConst * Math.exp(-(x**2) / sigma**2) / Math.sqrt(sigma));
+    const wavefunction = (x) => (wavefunctionConst * Math.exp(-((x-mu)**2) / sigma**2) / Math.sqrt(sigma));
 
-    const potentialFunction = (x) => (- 1.9/Math.sqrt(1 + 5*x**2));
+    const potentialFunction = (x) => (- 1.9/Math.sqrt(1 + 3*x**2));
 
     const potentialEnergyFunction = (x) => 0.5 * wavefunction(x) ** 2 * potentialFunction(x);
 
@@ -39,9 +49,9 @@ class PotentialEnergySliderDemo extends React.Component {
     //   return -Math.sqrt(2) * (-(sigma ** 2) + 2 * x**2) * Math.exp(-2 * x**2 / sigma**2) / (Math.sqrt(3.1415)*sigma**5);
     // };
 
-    const totalPotentialEnergy = NORMAL_SAMPLES.map((x) => {
-      return potentialEnergyFunction(x * sigma**2);
-    }).reduce((x, y) => x + y);
+    const totalPotentialEnergy = NORMAL_SAMPLES.map((xInit) => {
+      return potentialFunction(xInit * (0.5 * sigma) + mu);
+    }).reduce((x, y) => x + y) / NORMAL_SAMPLES.length;
 
     // const totalKineticEnergy = NORMAL_SAMPLES.map((x) => {
     //   return kineticEnergyFunction(x * sigma**2);
@@ -49,15 +59,22 @@ class PotentialEnergySliderDemo extends React.Component {
 
 
     return <Panel>
-      <h3>Potential Energy Slider Demo</h3>
-
-      <label>
-        Spread of the <span style={{color: 'green'}}>wavefunction</span>
-      <input
-        type="range"
-        value={this.state.wavefunctionSpreadInput}
-        onChange={(e) => this.setState({ wavefunctionSpreadInput: e.target.value })} />
+      <Row>
+        <label>
+          <span style={{color: 'green'}}>Position of the wavefunction</span>
+          <input
+            type="range"
+            value={this.state.wavefunctionPositionInput}
+            onChange={(e) => this.setState({ wavefunctionPositionInput: e.target.value })} />
+        </label>
+        <label>
+        <span style={{color: 'green'}}>Spread of the wavefunction</span>
+        <input
+          type="range"
+          value={this.state.wavefunctionSpreadInput}
+          onChange={(e) => this.setState({ wavefunctionSpreadInput: e.target.value })} />
       </label>
+      </Row>
       <SimpleGraph
         xrange={[-3, 3]} yrange={[-2, 2]} xaxis={true}
         // paths={[
@@ -67,12 +84,12 @@ class PotentialEnergySliderDemo extends React.Component {
           {color: 'green', fn: wavefunction},
           {color: 'black', fn: potentialFunction}
         ]}
-        width={500}
-        height={500}
-        detail={100}
+        width={400}
+        height={400}
+        detail={150}
       />
       <SimpleGraph
-        xrange={[-3, 3]} yrange={[-2, 2]} xaxis={true}
+        xrange={[-3, 3]} yrange={[-0.2, 3.8]} xaxis={true}
         // paths={[
         //   {color: 'purple', path: [[0, 2], [0, -2]]}
         // ]}
@@ -80,8 +97,8 @@ class PotentialEnergySliderDemo extends React.Component {
           {color: 'red', fn: potentialEnergyFunction},
           // {color: 'blue', fn: kineticEnergyFunction}
         ]}
-        width={500}
-        detail={50}
+        width={400}
+        detail={150}
       />
 
       <span style={{color: 'red'}}>Total PE is {Math.round(totalPotentialEnergy * 100) / 100}Ha</span>
