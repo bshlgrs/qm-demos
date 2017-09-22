@@ -32,7 +32,7 @@ The answer is pretty natural: We take the expectation value of the potential. Th
 
 Let's look at the following visualization of this. Because I'm a terrible UI designer, for the moment I'm going to explain this UI in text and expect you to go between reading the text and playing with the visualization.
 
-- We're looking at a wavefunction. You can control the position and the spread of the wavefunction with the knobs at the top.
+- We're looking at a wavefunction. You can control the position and the spread of the wavefunction with the knobs at the top. I put a light grey line through the center of the wavefunction so you can see where it is on both graphs.
 - The wavefunction is in a potential shown by the black line.
 - In the lower graph, I display in red the product of the PDF of the wavefunction and the potential energy at that point. In math, the thing I display is $$|\\Psi(x)|^2 \\cdot V(x)$$, where $$|\\Psi(x)|^2$$ is the norm squared of the wavefunction. The black line is the zero point.
 - The total area under this curve is the total potential energy of the wavefunction. I display the area under the curve at the bottom.
@@ -52,6 +52,7 @@ Here are some activities for you to try:
     - If the spread were much broader than the UI allows, what would the PE be?
 - Put the wavefunction slightly off center.
     - How does the total PE change as a function of spread?
+    - Does the PE reach its minimum in the center of the wavefunction?
 - In what configuration does the PE have the largest negative value?
 - In what configuration does the PE have the smallest negative value?
 
@@ -92,6 +93,15 @@ And now we can write the potential energy as
 $^$ \\int_{-\\infty}^{\\infty} \\Psi^*(x) \\cdot V(\\Psi, x) dx $^$
         `}/>
     </Panel>
+
+
+        <MarkdownWithLatex text={`
+
+#### Aside: Points that I want to make better in this section
+
+- Potential energy is always real-valued
+
+    `}/>
     </div>
 }
 

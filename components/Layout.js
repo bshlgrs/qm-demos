@@ -19,7 +19,7 @@ const Layout = (props) => (
     {props.naked ?
       props.children :
       <div className="row">
-        <div className='col-sm-8 col-sm-offset-1'>
+        <div className='col-sm-10 col-sm-offset-1'>
           <Header />
           {props.children}
         </div>

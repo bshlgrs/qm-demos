@@ -25,6 +25,7 @@ class GraphPath extends React.PureComponent {
             color={color}
             xStart={point[0]}
             yStart={point[1]}
+            strokeDasharray={this.props.options.strokeDasharray}
             xEnd={nextPoint[0]}
             yEnd={nextPoint[1]} />;
         }
@@ -69,9 +70,10 @@ class SimpleGraph extends React.PureComponent {
           {(axes || xaxis) && <Line xStart={xMin} xEnd={xMax} yStart={0} yEnd={0} />}
           {(axes || yaxis) &&  <Line xStart={0} xEnd={0} yStart={yMin} yEnd={yMax} />}
 
+          {paths && paths.map((options, idx) => <GraphPath key={idx} options={options} />)}
           {functions && functions.map((options, idx) =>
             <GraphFunction key={idx} options={options} range={[xMin, xMax]} detail={this.props.detail} />)}
-          {paths && paths.map((options, idx) => <GraphPath key={idx} options={options} />)}
+
           {preRenderedFunctions}
         </g>
 

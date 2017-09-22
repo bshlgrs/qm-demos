@@ -48,15 +48,15 @@ class TotalEnergySliderDemo extends React.Component {
       return -Math.sqrt(2) * (-(sigma ** 2) + 2 * x**2) * Math.exp(-2 * x**2 / sigma**2) / (Math.sqrt(3.1415)*sigma**5);
     };
 
-    const totalPotentialEnergy = NORMAL_SAMPLES.map((x) => {
-      return potentialEnergyFunction(x * sigma**2);
-    }).reduce((x, y) => x + y);
+    const totalPotentialEnergy = NORMAL_SAMPLES.map((xInit) => {
+      return potentialFunction(xInit * (0.5 * sigma));
+    }).reduce((x, y) => x + y) / NORMAL_SAMPLES.length;
 
-    const totalKineticEnergy = NORMAL_SAMPLES.map((x) => {
-      return kineticEnergyFunction(x * sigma**2);
-    }).reduce((x, y) => x + y);
+    const totalKineticEnergy = NORMAL_SAMPLES.map((xInit) => {
+      return potentialFunction(xInit * (0.5 * sigma));
+    }).reduce((x, y) => x + y) / NORMAL_SAMPLES.length;
 
-    const DETAIL = 30;
+    const DETAIL = 150;
     const GRAPH_SIZE = 450;
     return <Panel>
       <label>
@@ -75,6 +75,9 @@ class TotalEnergySliderDemo extends React.Component {
               {color: 'green', fn: wavefunction},
               {color: 'black', fn: potentialFunction}
             ]}
+            paths={[
+              {color: 'lightgrey', path: [[0, 3], [0, -3]]}
+            ]}
             width={GRAPH_SIZE}
             height={GRAPH_SIZE}
             detail={DETAIL}
@@ -89,6 +92,9 @@ class TotalEnergySliderDemo extends React.Component {
               {color: 'red', fn: potentialEnergyFunction},
               {color: 'blue', fn: kineticEnergyFunction},
               {color: 'purple', fn: (x) => (potentialEnergyFunction(x) + kineticEnergyFunction(x))},
+            ]}
+            paths={[
+              {color: 'lightgrey', path: [[0, 3], [0, -3]]}
             ]}
             width={GRAPH_SIZE}
             height={GRAPH_SIZE}

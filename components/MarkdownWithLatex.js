@@ -3,11 +3,12 @@ import translate from '../lib/translator.js'
 class MarkdownWithLatex extends React.PureComponent {
   render () {
     // todo: consider multiple children?
-    const paragraphs = [this.props.text];
+    const {text, ...rest} = this.props;
+    const paragraphs = [text];
 
 
 
-    return <div>
+    return <div {...rest}>
     <style global jsx>{`
         blockquote {
           margin-left: 20px;

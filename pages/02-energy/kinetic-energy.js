@@ -20,13 +20,13 @@ It turns out that quantum mechanics has a type of energy like this. We call this
 
 One interesting feature of quantum mechanics is that we can calculate the kinetic energy directly from the wavefunction. In classical mechanics, it's not enough to know the configuration of a system to know its kinetic energy, you also need to know the rate of change of the configuration. But in QM, there's just this one object, the wavefunction, which tells us everything we need to know.
 
-Here's how it's defined: The kinetic energy operator at a point is proportional to the amount that the wavefunction is curving towards zero there. When the wavefunction is curving towards zero, your wavefunction has positive kinetic energy, and when it's curved away
+Here's how it's defined: The kinetic energy operator at a point is proportional to the amount that the wavefunction is curving towards zero there. When the wavefunction is curving towards zero, your wavefunction has positive kinetic energy, and when it's curved away it has negative kinetic energy at that point.
 
 `}/>
 
     <Panel>
       <MarkdownWithLatex text={`
-#### Optional aside: Mathematical formalism
+#### Equations for this
 
 If we're in a one-dimensional universe, the equation for the kinetic energy of the wavefunction $$\\Psi$$ at point $$x$$ is:
 
@@ -71,26 +71,29 @@ $^$KE(\\Psi, x) = -\\frac{m}{2} \\left(\\frac{d^2\\Psi}{dx^2}(x) + \\frac{d^2\\P
 
 so its kinetic energy is negative.
 
-exercise: select the places on a wavefunction where it's got positive or negative derivative
-
-exercise: select the places where it's got positive or negative 2nd derivative
-
-exercise: select places where it's got positive or negative KE.
+Here's a wavefunction. Can you decide, for each section, whether the KE is positive or negative there?
 
 <img src='/static/img/ke-exercise-mockup.jpg' height='500'/>
 
-exercise: figure out which wavefunctions have high or low total KE.
+Here are some other points that I could make here:
 
-Things to discuss:
+- The prototypical example of a wavefunction with positive kinetic energy is an oscillating function like $$\\Psi(x) = \\sin(k  x)$$. In this case, the energy is proportional to $$k^2$$.
+- The prototypical example of negative kinetic energy is a wavefunction like $$\\Psi(x) = e^{-\\kappa x}$$. The exponential function has negative curvature everywhere.
+- Wavefunctions can't have negative kinetic energy in total. This is because they need to be normalized, and whenever they have negative kinetic energy their amplitude must be curving upwards. As they say, what goes up must come down.
+- TODO, maybe: The function $$\\Psi(x) = \\sin(x) + 1$$ has positive total KE, for kind of interesting, subtle reasons.
 
-- why is KE always net positive
-- how this plays into the complex phase stuff
 
 ### The $$\\frac{1}{m}$$ term
 
-Exercise: Suppose you have a proton with the same spread as an electron. (Remember that protons weigh much more.) Which has more kinetic energy? Answer: The electron, because the proton is much heavier. This is why it's okay to treat protons as classical point particles compared to protons.
+Suppose you have a proton with the same spread as an electron. (Remember that protons weigh much more.) Which has more kinetic energy?
 
-TODO
+Answer: The electron, because the proton is much heavier.
+
+This is why it's okay to treat protons as classical point particles compared to protons.
+
+By the way, this is also my explanation for why quantum mechanics is the relevant physics for the interactions between nuclei and electrons. The following is very handwavy, but maybe useful: If nuclei and electrons are far apart, they behave like classical particles because they each doesn't need to be very tightly bunched together, so both have negligable KE. But if we're in a situation like a hydrogen atom where there's nothing stopping the electron and proton from getting as close together as they can get, then the wavefunctions are going to get more and more tightly bound until we run up against some other constraint. The two relevant constraints are the KE of the proton and the electron, and for a given tightness of the wavefunction, the KE of the electron is much larger. So we run into the constraint of the KE of the electron.
+
+TODO: BTW, another reason it's 1/m instead of something else: the momentum, not the velocity, is what you get from counting oscillations in phase.
 
  `}/>
 
@@ -121,6 +124,10 @@ or, more explicitly
 $^$ -\\frac{1}{m} \\int_{-\\infty}^{\\infty}  \\Psi^*(x) \\cdot \\frac{\\partial^2}{\\partial x^2} \\Psi(x) dx $^$
 
 Incidentally, this makes me feel better about how we measure wavefunction probability according to the square of its amplitude rather than its absolute value.
+
+---
+
+One useful exercise is to figure out the kinetic energy of the wavefunction $$\\Psi(x) = e^{i k x}$$.
         `}/>
     </Panel>
 
@@ -132,10 +139,15 @@ Incidentally, this makes me feel better about how we measure wavefunction probab
 
 Okay, so now we know how to calculate the energy of a wavefunction. Some notes:
 
-- Kinetic energy can be calculated totally ignoring the potential.
+- Kinetic energy can be calculated totally ignoring the potential. It's just a function of the wavefunction.
 - Potential energy can be calculated totally ignoring the complex phase of the wavefunction.
 
 So the goal was to figure out the ground state energy of a particular potential. Now we know how to calculate the energy of a wavefunction in a potential, but we don't know how to go from that to reasoning about the properties of the ground states of a potential. We're going to get to that next.
+
+### Notes
+
+- KE is real-valued
+
         `}/>
 
      <Link href="/03-ground-states/"><a>Continue</a></Link>
