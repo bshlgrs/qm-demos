@@ -1,56 +1,37 @@
 import Line from "./Line"
+import GraphFunction from "./GraphFunction"
 
-function getListOfNumbers(start, n, step) {
-  const out = [];
-  for (var x = start; x < n; x += step) {
-    out.push(x);
+
+class GraphPath extends React.PureComponent {
+  render () {
+    const { color, path, tangent } = this.props.options;
+
+    // return <path
+    //   d={`M${deSci(xStart)} ${deSci(yStart)} L${deSci(xEnd)} ${deSci(yEnd)}`}
+    //   stroke={color || 'black'}
+    //   strokeWidth='1'
+    //   vectorEffect='non-scaling-stroke'
+    //   />
+
+    return <g>
+      {path.map((point, idx) => {
+        const nextPoint = path[idx + 1];
+
+        if (!nextPoint) {
+          return null;
+        } else {
+          return <Line
+            key={idx}
+            color={color}
+            xStart={point[0]}
+            yStart={point[1]}
+            strokeDasharray={this.props.options.strokeDasharray}
+            xEnd={nextPoint[0]}
+            yEnd={nextPoint[1]} />;
+        }
+      })}
+    </g>;
   }
-  return out;
-}
-
-const GraphFunction = (props) => {
-  const { options, range } = props;
-  const { fn, color } = options;
-  const [xMin, xMax] = range;
-  const xSize = xMax - xMin;
-
-  const detail = 100;
-
-  const numbers = getListOfNumbers(xMin, detail, xSize / detail);
-
-  return <g>
-    {numbers.map((x, idx) => {
-      if (idx == numbers.length - 1) {
-        return null;
-      }
-      const nextX = numbers[idx + 1];
-
-      return (idx != numbers.length - 1) &&
-        <Line key={x} xStart={x} xEnd={nextX} yStart={fn(x)} yEnd={fn(nextX)} color={color} />;
-    })}
-  </g>;
-}
-
-const GraphPath = (props) => {
-  const { color, path, tangent } = props.options;
-
-  // TODO: tangent
-  return <g>
-    {path.map((point, idx) => {
-      const nextPoint = path[idx + 1];
-      if (!nextPoint) {
-        return null;
-      } else {
-        return <Line
-          key={idx}
-          color={color}
-          xStart={point[0]}
-          yStart={point[1]}
-          xEnd={nextPoint[0]}
-          yEnd={nextPoint[1]} />;
-      }
-    })}
-  </g>;
 }
 
 class SimpleGraph extends React.PureComponent {
@@ -60,7 +41,7 @@ class SimpleGraph extends React.PureComponent {
     const xrange = xMax - xMin;
     const [yMin, yMax] = props.yrange;
     const yrange = yMax - yMin;
-    const { height, width, functions, paths, axes, xaxis, yaxis } = props;
+    const { height, width, functions, paths, axes, xaxis, yaxis, preRenderedFunctions } = props;
 
 
     const verticalScaling = xrange / yrange;
@@ -89,9 +70,11 @@ class SimpleGraph extends React.PureComponent {
           {(axes || xaxis) && <Line xStart={xMin} xEnd={xMax} yStart={0} yEnd={0} />}
           {(axes || yaxis) &&  <Line xStart={0} xEnd={0} yStart={yMin} yEnd={yMax} />}
 
-          {functions && functions.map((options, idx) =>
-            <GraphFunction key={idx} options={options} range={[xMin, xMax]}/>)}
           {paths && paths.map((options, idx) => <GraphPath key={idx} options={options} />)}
+          {functions && functions.map((options, idx) =>
+            <GraphFunction key={idx} options={options} range={[xMin, xMax]} detail={this.props.detail} />)}
+
+          {preRenderedFunctions}
         </g>
 
       </svg>

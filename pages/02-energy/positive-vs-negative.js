@@ -10,8 +10,7 @@ import MarkdownWithLatex from '../../components/MarkdownWithLatex'
 import MultipleChoiceQuestion from '../../components/MultipleChoiceQuestion'
 
 
-const PositiveVsNegativePotentialEnergy = () => {
-  <div>
+const PositiveVsNegativePotentialEnergy = () =>  (<Layout>
     <MarkdownWithLatex text={`
 
 In this section, we'll talk about potential energy. We'll revisit what it means in classical mechanics. We'll look at the potential energy that comes from gravity, springs, and electric forces. Finally, we'll learn how to calculate the potential energy of the wavefunction.
@@ -57,7 +56,7 @@ For our current purposes, one of the most important things to remember about pot
       correctAnswerIdx={0}
       explanation="Remember that potential energy is just a function of the configuration of the objects we're looking at, and not of their momentums. The potential energy of a system is exactly the same no matter how or whether its constituents happen to be moving."
       />
-  </div>
+  </Layout>
 )
 
 export default PositiveVsNegativePotentialEnergy;

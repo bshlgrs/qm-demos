@@ -1,61 +1,18 @@
-# qm demos
+# qm notes
 
-demos
+This is a work in progress. It's currently deployed [here](http://next.shlegeris.com).
 
-## Contents
+## Intro
 
-### Ground states of the Hamiltonian
+(copied from the intro post)
 
-Last time, we talked about how we calculate the total energy of a wavefunction. This time, we're going to look at what the ground states look like.
+My goal with this series is to give you a rough, qualitative understanding of the laws of physics which lead to the chemical and material properties of the world around us. As we'll see, the relevant parts of physics mostly come from a narrow slice of quantum mechanics--in particular, the quantum mechanics of electrons at low energies.
 
-As you'll recall, there's a
+None of the material that I’m presenting is original, obviously. And I don’t think that my explanations of individual topics are particularly groundbreaking (though I am proud of some of the visualizations and interactive exercises I’ve built). I’m writing this because I want people to be able to quickly get an answer to the question:
 
-LOTS OF EXAMPLES
+How does the bewildering variety of material properties that we see around us arise from our laws of physics?
 
-perturbation theory?
-variational method?
+By material properties, I basically mean all of the ways that different types of matter around us vary. We have atoms, which form molecules. Some of them are solid at room temperature; others are liquid or gaseous. Some of them are sticky. Some are ductile, and some are malleable. Some are conductors and some are insulators. And some of them are even self-replicating. These are the properties researched in chemistry (which mostly studies the interactions of atoms in molecules) and materials science (which mostly studies how molecules interact with each other). I hope to convince you that types of variation are a really surprising result to come out of a set of physical laws.
 
+For a simple example, consider sulfur and chlorine, which have 16 and 17 protons respectively. These elements are extremely different. Chlorine is a green gas, and sulfur is a yellow solid. The universe is obviously running some computation which takes 16 and gives you back sulfur and takes 17 and gives chlorine. This is not the kind of behavior that simple mathematical functions normally exhibit.
 
-### Stationary states
-
-
-### Identical particles
-
-### Where to go from here
-
-- Things you can analyse only with what we've talked about so far:
-  - chemistry
-  - states of matter
-  - solids
-
-## Notes
-
-Things that I'd like to explain at some point:
-
-- chemistry
-  - in particular, the Hydrogen atom
-  - "Computational chemistry is a sequence of approximations to the stuff we've talked about here"
-- van der Waals forces
-- Relativity
-  - We can get *some* of the way by adding another term to the Hamiltonian
-- linear and nonlinear variational methods
-- sizes of the rows of the periodic table
-
-Things to remember to name
-
-- The Born-Oppenheimer approximation
-
-Other points I haven't made:
-
-- Classical mechanics was missing non-1/r force laws.
-- Classical mechanics can't explain stuff.
-- The different worlds of protons and electrons. The protons in the upper world are moving according to a conservative force. The electrons are just doing their thing
-  - How does this actually play out? what's the breakdown between proton KE, electron wavefunction KE and PE?
-- QM is first order.
-
-
-
-## Shorter version
-
-- QM has wavefunctions.
-- Their energies are a function of their potential energy and their kinetic energy.

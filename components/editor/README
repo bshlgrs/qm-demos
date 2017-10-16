@@ -1,0 +1,13 @@
+Code:
+
+- EditorState class:
+  - File
+    - Title
+    - Body
+  - UIState
+    - is either "editing-title", 'editing-body', or 'none'
+
+- Editor
+  - FileEditor
+    - FileTitle
+    - FileBody

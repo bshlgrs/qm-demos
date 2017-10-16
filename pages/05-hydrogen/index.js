@@ -27,6 +27,14 @@ One difference between 1D and 3D is that you can have finite energy in the proto
 
 
 walk through the other stationary states.
+
+--------
+
+Maybe calculate the bond length for H2?
+
+----
+
+Can we use a PPL for this?
     `}/>
 
 

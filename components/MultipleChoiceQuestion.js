@@ -1,3 +1,8 @@
+import styles1 from '../static/css/bootstrap.min.css';
+import styles2 from '../static/css/now-ui-kit.css';
+import applyStyles from 'next-style-loader/applyStyles';
+import Panel from './Panel';
+
 class MultipleChoiceQuestion extends React.Component {
   constructor(props) {
     super(props);
@@ -13,9 +18,23 @@ class MultipleChoiceQuestion extends React.Component {
       (correct ? 'panel-success' : 'panel-danger') :
       'panel-default';
 
-    return <div className="panel panel-default">
-      <div className="panel-body">
-        <h4>Question</h4>
+    const mainStyle = {
+      boxShadow: "10px 5px 5px #b9b9b9",
+      padding: "20px",
+      marginTop: "20px",
+      backgroundColor: "#e8e8e8"
+    };
+
+    const innerStyle = {
+      padding: "20px",
+      marginTop: "20px",
+      backgroundColor: correct ? "#dce8cf" : "#f7cfcf",
+      boxShadow: "2px 2px 2px #b9b9b9"
+    }
+
+    return <div style={{'marginBottom': '30px'}}>
+      <Panel>
+
         <p>{this.props.question}</p>
 
         {this.props.answers.map((ans, idx) =>
@@ -36,12 +55,11 @@ class MultipleChoiceQuestion extends React.Component {
           Submit
         </button>
 
-        <div className={`panel ${panelAnswerClass}`}>
-          <div className='panel-heading' style={{opacity: this.state.submitted ? 1 : 0}}>
-            <span className='panel-title'>{(correct ? "Correct!" : "Wrong!")}
-            </span>
-          </div>
-          {this.state.submitted && <div className="panel-body">
+        <div>
+          {this.state.submitted && <div className="panel-body" style={innerStyle}>
+            <div className='panel-title'>
+              {(correct ? "Correct!" : "Wrong!")}
+            </div>
             {this.props.explanation}
             <div>{correct ? this.props.correctText : this.props.incorrectText}</div>
             {!correct && <button
@@ -51,9 +69,9 @@ class MultipleChoiceQuestion extends React.Component {
             </button>}
           </div>}
         </div>
-      </div>
+      </Panel>
     </div>
   }
 }
 
-export default MultipleChoiceQuestion
+export default applyStyles(styles2)(applyStyles(styles1)(MultipleChoiceQuestion));
