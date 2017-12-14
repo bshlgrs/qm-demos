@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import Panel from '../components/Panel'
 import MarkdownWithLatex from '../components/MarkdownWithLatex'
 import katex from 'katex'
 import Immutable from 'immutable'
+
 
 class Einsum extends React.Component {
   constructor () {
@@ -66,16 +68,20 @@ We can write a lot of functions from tensors to tensors using an abbreviated for
 
 \`ij->ji\` identifies $$f(A)_{ji} = A_{ij}$$. This is a matrix transpose.
 
+\`ij,ij->\` identifies $$f(A, B)_{ij} = A_{ij} \\cdot B_{ij}$$. This is elementwise multiplication.
 
 
+- extensions: repeated indexes in output, no indexes in output
 
       `} />
 
+      <Panel>
+        <p> You can try writing einsum strings here to see what they correspond to</p>
       <input value={this.state.text} onChange={(e) => this.setState({ text: e.target.value })} />
 
-      <p>{this.state.text}</p>
-
       <MarkdownWithLatex text={`${this.equation()}`}/>
+      </Panel>
+
     </Layout>
   }
 }

@@ -9,7 +9,9 @@ const Layout = (props) => (
   <div>
     <Head>
       <title>{props.title || "Quantum mechanics"}</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
+      <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css"
+          crossorigin="anonymous" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
 
       {props.scripts && props.scripts.map((x) => <script key={x} src={x} />)}

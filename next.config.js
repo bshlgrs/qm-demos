@@ -1,5 +1,6 @@
 // yarn add glob
 const glob = require('glob')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 exports.exportPathMap = () => {
   const pathMap = {}
@@ -31,3 +32,4 @@ exports.webpack = (config, { dev }) => {
 
   return config;
 }
+
